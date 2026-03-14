@@ -16,6 +16,9 @@ import {
   TrendingUp,
   Globe,
   Zap,
+  Medal,
+  Handshake,
+  UserCheck,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -46,7 +49,7 @@ export default function HomePage() {
               Professionals
             </h1>
             <p className="text-lg text-white/70 leading-relaxed mb-3 max-w-xl">
-              NPPN is an invite-only community for practitioners with real
+              NPI is an invite-only community for practitioners with real
               payments experience&mdash;backed by a dedicated branch for students
               who want to grow into the industry.
             </p>
@@ -603,6 +606,160 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Giving Back: Veterans Initiative ── */}
+      <section className="py-24 bg-gradient-to-br from-navy-lighter to-navy-light relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-72 h-72 rounded-full bg-gold blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-gold-light blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
+                <Medal size={14} className="text-gold" />
+                <span className="text-gold text-xs font-semibold tracking-wider uppercase">
+                  Our Mission to Give Back
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Supporting Veterans in Payments
+              </h2>
+              <p className="text-white/60 max-w-2xl mx-auto leading-relaxed">
+                We believe the discipline, leadership, and mission-first mindset
+                that veterans bring are exactly what the payments industry needs.
+                That&apos;s why we&apos;re committed to opening doors for those
+                who served.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Veterans Cohort Card */}
+            <AnimatedSection>
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full">
+                <div className="bg-gradient-to-r from-gold-dark to-gold p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                      <Medal size={24} className="text-gold-dark" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-navy font-semibold tracking-wider uppercase">
+                        Free Program
+                      </span>
+                      <h3 className="text-xl font-bold text-navy">
+                        Veterans Payments Cohort
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <p className="text-slate text-sm leading-relaxed mb-6">
+                    Special cohorts designed exclusively for U.S. military veterans
+                    and active-duty service members transitioning to civilian careers.
+                    We cover the fundamentals of payments from the ground
+                    up&mdash;no prior experience required.
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "Free, structured cohort covering payments basics: rails, networks, settlement, and compliance",
+                      "Taught by NPI Professional members who volunteer their time",
+                      "Small cohort sizes (15\u201320 veterans) for real mentorship",
+                      "Hands-on case studies and real-world payments scenarios",
+                      "Certificate of completion recognized by NPI member companies",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <CheckCircle
+                          size={16}
+                          className="text-gold-dark shrink-0 mt-0.5"
+                        />
+                        <span className="text-navy-lighter">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-lg hover:bg-navy-light transition-all w-full justify-center"
+                  >
+                    Nominate a Veteran or Apply <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Networking Night Card */}
+            <AnimatedSection delay={0.15}>
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full">
+                <div className="bg-gradient-to-r from-navy to-navy-light p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center">
+                      <Handshake size={24} className="text-navy" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-gold font-semibold tracking-wider uppercase">
+                        Quarterly Event
+                      </span>
+                      <h3 className="text-xl font-bold text-white">
+                        Veterans Networking Night
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <p className="text-slate text-sm leading-relaxed mb-6">
+                    Each quarter, we host a dedicated networking evening where
+                    veterans from our cohort program connect face-to-face with
+                    payments professionals. No awkward name tags and keynotes&mdash;just
+                    real conversations over dinner with people who can open doors.
+                  </p>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "Intimate dinner format: 20\u201330 veterans paired with 20\u201330 industry professionals",
+                      "Structured but relaxed: brief intros, then organic conversations",
+                      "Professional members volunteer as mentors and connectors",
+                      "Hosted in Atlanta with plans to expand to other cities",
+                      "Completely free for veteran attendees",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm">
+                        <CheckCircle
+                          size={16}
+                          className="text-gold-dark shrink-0 mt-0.5"
+                        />
+                        <span className="text-navy-lighter">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/events"
+                    className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-all w-full justify-center"
+                  >
+                    View Upcoming Events <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Impact stats */}
+          <AnimatedSection>
+            <div className="mt-12 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+              {[
+                { icon: Medal, stat: "100%", label: "Free for veterans" },
+                { icon: UserCheck, stat: "15\u201320", label: "Veterans per cohort" },
+                { icon: Handshake, stat: "Quarterly", label: "Networking nights" },
+              ].map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <item.icon size={18} className="text-gold" />
+                  </div>
+                  <p className="text-2xl font-bold text-white">{item.stat}</p>
+                  <p className="text-xs text-white/50">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── Testimonials / Founder Credibility ── */}
       <section className="py-24 bg-gradient-to-br from-navy to-navy-light">
         <div className="mx-auto max-w-7xl px-6">
@@ -618,7 +775,7 @@ export default function HomePage() {
             {[
               {
                 quote:
-                  "What makes NPPN different is the bar. Everyone in the room actually does the work day-to-day.",
+                  "What makes NPI different is the bar. Everyone in the room actually does the work day-to-day.",
                 author: "Senior Payments PM",
                 role: "Top-10 U.S. Bank",
               },

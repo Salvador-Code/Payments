@@ -38,10 +38,10 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-navy font-bold text-xl tracking-tight leading-none">
-              NPPN
+              NPI
             </span>
             <span className="text-slate text-[10px] tracking-widest uppercase leading-none mt-0.5 hidden sm:block">
-              National Payments Professionals Network
+              National Payment Institute
             </span>
           </div>
         </Link>
@@ -96,7 +96,7 @@ export default function Header() {
               <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
                 <span className="text-gold font-bold text-lg">N</span>
               </div>
-              <span className="text-navy font-bold text-xl">NPPN</span>
+              <span className="text-navy font-bold text-xl">NPI</span>
             </Link>
             <button onClick={() => setMobileOpen(false)} className="p-2 text-navy">
               <X size={24} />

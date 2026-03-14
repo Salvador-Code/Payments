@@ -11,10 +11,10 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
                 <span className="text-navy font-bold text-lg">N</span>
               </div>
-              <span className="font-bold text-xl">NPPN</span>
+              <span className="font-bold text-xl">NPI</span>
             </div>
             <p className="text-slate-light text-sm leading-relaxed">
-              National Payments Professionals Network. A curated community for
+              National Payment Institute. A curated community for
               serious payments practitioners and aspiring professionals.
             </p>
           </div>
@@ -74,6 +74,14 @@ export default function Footer() {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/about#veterans"
+                  className="text-sm text-slate-light hover:text-gold transition-colors"
+                >
+                  Veterans Initiative
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -109,8 +117,8 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-navy-lighter flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-light">
-            &copy; {new Date().getFullYear()} National Payments Professionals
-            Network. All rights reserved.
+            &copy; {new Date().getFullYear()} National Payment Institute. All
+            rights reserved.
           </p>
           <p className="text-xs text-slate-light">
             Rooted in Atlanta. Built for the U.S. payments ecosystem.

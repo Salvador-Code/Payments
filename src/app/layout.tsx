@@ -27,15 +27,16 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "NPPN - National Payments Professionals Network",
+  title: "NPI - National Payment Institute",
   description:
-    "A curated, application-based network for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.",
+    "A curated, application-based institute for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.",
   keywords: [
     "payments",
     "fintech",
     "professional network",
     "payments professionals",
-    "NPPN",
+    "NPI",
+    "national payment institute",
     "membership",
   ],
 };

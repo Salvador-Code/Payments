@@ -148,7 +148,7 @@ export default function ContactPage() {
                       <h4 className="font-semibold text-navy">Email</h4>
                     </div>
                     <p className="text-sm text-slate">
-                      hello@nppn.org
+                      hello@nationalpaymentinstitute.org
                     </p>
                     <p className="text-xs text-slate mt-1">
                       We respond within 2&ndash;3 business days.
@@ -182,7 +182,7 @@ export default function ContactPage() {
                       partnerships.
                     </p>
                     <p className="text-sm text-gold">
-                      partnerships@nppn.org
+                      partnerships@nationalpaymentinstitute.org
                     </p>
                   </div>
                 </div>

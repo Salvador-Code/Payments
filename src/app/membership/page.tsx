@@ -336,7 +336,7 @@ function ApplicationModal({
                 className="mt-1 rounded border-ice-dark text-gold focus:ring-gold"
               />
               <span className="text-sm text-slate">
-                I agree to follow NPPN&apos;s community code and confidentiality
+                I agree to follow NPI&apos;s community code and confidentiality
                 guidelines. *
               </span>
             </label>
@@ -547,7 +547,7 @@ export default function MembershipPage() {
             </div>
 
             <p className="text-slate leading-relaxed mb-8">
-              NPPN Professional membership is for people who already live and
+              NPI Professional membership is for people who already live and
               breathe payments. It is selective by design, so the community
               remains relevant, focused, and worth your time.
             </p>

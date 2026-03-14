@@ -13,6 +13,8 @@ import {
   Heart,
   Lightbulb,
   Scale,
+  Medal,
+  Handshake,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -24,10 +26,10 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="max-w-3xl">
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                About NPPN
+                About NPI
               </h1>
               <p className="text-lg text-white/70 leading-relaxed">
-                The National Payments Professionals Network was founded with a
+                The National Payment Institute was founded with a
                 simple belief: the payments industry needs a community where
                 experience is valued, conversations are real, and membership
                 means something.
@@ -51,7 +53,7 @@ export default function AboutPage() {
                 &ldquo;networks&rdquo; are just email lists.
               </p>
               <p className="text-slate leading-relaxed">
-                NPPN is different by design. We review every application. We
+                NPI is different by design. We review every application. We
                 cap our events. We separate Professional and Student tracks so
                 that everyone gets value at their level. And we&apos;re rooted
                 in the real work of payments&mdash;not the buzzwords.
@@ -155,7 +157,7 @@ export default function AboutPage() {
                     Founded by Visa Product Leadership
                   </h3>
                   <p className="text-slate text-sm leading-relaxed">
-                    NPPN was founded by payments professionals with hands-on
+                    NPI was founded by payments professionals with hands-on
                     experience building products at scale. Our founding team
                     includes product leaders from Visa and other top-tier
                     payments organizations who saw firsthand the gap between
@@ -197,9 +199,80 @@ export default function AboutPage() {
                   <p className="text-slate text-sm leading-relaxed">
                     Atlanta is home to some of the largest payments processors
                     and FinTech companies in the world. We&apos;re building
-                    NPPN from this epicenter, with plans to serve the broader
+                    NPI from this epicenter, with plans to serve the broader
                     U.S. payments ecosystem through both in-person and virtual
                     experiences.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Veterans Initiative */}
+      <section id="veterans" className="py-20 bg-white scroll-mt-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <AnimatedSection>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
+                <Medal size={14} className="text-gold-dark" />
+                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
+                  Giving Back
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-navy mb-4">
+                Our Commitment to Veterans
+              </h2>
+              <p className="text-slate max-w-2xl mx-auto">
+                We believe the payments industry has a responsibility to create
+                pathways for those who&apos;ve served. Veterans bring discipline,
+                leadership, and adaptability&mdash;exactly the traits that make
+                great payments professionals.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="space-y-8">
+            <AnimatedSection>
+              <div className="flex items-start gap-5">
+                <div className="shrink-0 w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
+                  <Medal size={20} className="text-navy" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-navy mb-2">
+                    Free Veterans Payments Cohorts
+                  </h3>
+                  <p className="text-slate text-sm leading-relaxed">
+                    Each quarter, we run a free, structured cohort for U.S.
+                    military veterans and transitioning service members. The
+                    program covers the fundamentals of payments&mdash;card
+                    networks, ACH, real-time payments, risk, compliance, and
+                    more&mdash;taught by NPI Professional members who volunteer
+                    their expertise. Cohorts are small (15&ndash;20 veterans) to
+                    ensure real mentorship and hands-on learning.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div className="flex items-start gap-5">
+                <div className="shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
+                  <Handshake size={20} className="text-gold" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-navy mb-2">
+                    Quarterly Veterans Networking Night
+                  </h3>
+                  <p className="text-slate text-sm leading-relaxed">
+                    After each cohort, we host a dedicated networking dinner
+                    where veterans connect face-to-face with payments
+                    professionals from our member community. No awkward panels or
+                    cold intros&mdash;just an intimate dinner where real
+                    relationships form. Our Professional members show up as
+                    mentors, connectors, and advocates. These nights are
+                    completely free for veteran attendees.
                   </p>
                 </div>
               </div>
@@ -217,7 +290,7 @@ export default function AboutPage() {
                 What&apos;s Coming Next
               </h2>
               <p className="text-slate max-w-xl mx-auto">
-                We&apos;re building NPPN in phases. Here&apos;s what&apos;s on
+                We&apos;re building NPI in phases. Here&apos;s what&apos;s on
                 the roadmap.
               </p>
             </div>

@@ -50,7 +50,20 @@ const events = [
     priority: "Student members",
     studentSeats: null,
     description:
-      "A hands-on workshop covering the payments value chain, key players, and career paths. Led by NPPN Professional members who work at top-10 banks and fintechs.",
+      "A hands-on workshop covering the payments value chain, key players, and career paths. Led by NPI Professional members who work at top-10 banks and fintechs.",
+    featured: false,
+  },
+  {
+    title: "Veterans Networking Night: Payments & Purpose",
+    date: "April 30, 2026",
+    time: "6:00 PM \u2013 9:00 PM EST",
+    location: "The Gathering Spot, Atlanta, GA",
+    capacity: "50 attendees",
+    price: "Free for veterans",
+    priority: "Veterans + Professional members",
+    studentSeats: null,
+    description:
+      "An intimate dinner pairing veterans from our Payments Cohort program with NPI Professional members. Build real relationships with people who can open doors in payments. Completely free for veteran attendees.",
     featured: false,
   },
   {
