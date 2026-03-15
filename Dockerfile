@@ -43,4 +43,4 @@ COPY --from=builder /app/src/generated ./src/generated
 USER nextjs
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma db push --skip-generate && npx next start -p ${PORT:-3000}"]
+CMD ["sh", "-c", "npx prisma db push && npx next start -p ${PORT:-3000}"]
