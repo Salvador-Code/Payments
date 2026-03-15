@@ -4,7 +4,7 @@ set -e
 # Wait for database to be reachable before running migrations
 MAX_RETRIES=10
 RETRY=0
-until npx prisma db push 2>/dev/null; do
+until npx prisma db push; do
   RETRY=$((RETRY + 1))
   if [ "$RETRY" -ge "$MAX_RETRIES" ]; then
     echo "ERROR: Could not reach database after $MAX_RETRIES attempts. Starting app anyway."

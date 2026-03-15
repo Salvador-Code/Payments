@@ -40,8 +40,9 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
 COPY --from=builder /app/src/generated ./src/generated
 
+COPY --from=builder /app/start.sh ./start.sh
+RUN chmod +x ./start.sh
+
 USER nextjs
 EXPOSE 3000
-
-COPY --from=builder /app/start.sh ./start.sh
 CMD ["sh", "start.sh"]
