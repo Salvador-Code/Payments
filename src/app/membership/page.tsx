@@ -23,14 +23,67 @@ function ApplicationModal({
 }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      if (type === "professional") {
+        const checkedAreas: string[] = [];
+        form.querySelectorAll<HTMLInputElement>('input[name="area"]:checked').forEach((cb) => {
+          checkedAreas.push(cb.value);
+        });
+
+        const res = await fetch("/api/apply-professional", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.get("name"),
+            email: formData.get("email"),
+            linkedinUrl: formData.get("linkedinUrl"),
+            currentTitle: formData.get("currentTitle"),
+            currentEmployer: formData.get("currentEmployer"),
+            yearsExperience: formData.get("yearsExperience"),
+            areasOfWork: checkedAreas,
+            roleDescription: formData.get("roleDescription"),
+            hopeToGet: formData.get("hopeToGet"),
+            canContribute: formData.get("canContribute"),
+          }),
+        });
+
+        if (!res.ok) throw new Error("Submission failed");
+      } else {
+        const res = await fetch("/api/apply-student", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.get("name"),
+            email: formData.get("email"),
+            linkedinUrl: formData.get("linkedinUrl"),
+            isStudent: formData.get("isStudent"),
+            university: formData.get("university"),
+            program: formData.get("program"),
+            expectedGraduation: formData.get("expectedGraduation"),
+            whyPayments: formData.get("whyPayments"),
+            hopeToGain: formData.get("hopeToGain"),
+          }),
+        });
+
+        if (!res.ok) throw new Error("Submission failed");
+      }
+
       setSubmitted(true);
-    }, 1500);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -127,6 +180,7 @@ function ApplicationModal({
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                   placeholder="Jane Smith"
@@ -138,6 +192,7 @@ function ApplicationModal({
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                   placeholder="jane@example.com"
@@ -149,6 +204,7 @@ function ApplicationModal({
                 </label>
                 <input
                   type="url"
+                  name="linkedinUrl"
                   required={type === "professional"}
                   className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                   placeholder="https://linkedin.com/in/..."
@@ -162,6 +218,7 @@ function ApplicationModal({
                     </label>
                     <input
                       type="text"
+                      name="currentTitle"
                       required
                       className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                       placeholder="Payments Product Manager"
@@ -173,6 +230,7 @@ function ApplicationModal({
                     </label>
                     <input
                       type="text"
+                      name="currentEmployer"
                       required
                       className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                       placeholder="Acme Payments Inc."
@@ -196,6 +254,7 @@ function ApplicationModal({
                     How many years have you worked in payments? *
                   </label>
                   <select
+                    name="yearsExperience"
                     required
                     className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
                   >
@@ -224,6 +283,8 @@ function ApplicationModal({
                       <label key={area} className="flex items-center gap-2 text-sm text-navy-lighter">
                         <input
                           type="checkbox"
+                          name="area"
+                          value={area}
                           className="rounded border-ice-dark text-gold focus:ring-gold"
                         />
                         {area}
@@ -236,6 +297,7 @@ function ApplicationModal({
                     Tell us briefly how your role connects to payments *
                   </label>
                   <textarea
+                    name="roleDescription"
                     required
                     rows={3}
                     className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
@@ -250,6 +312,7 @@ function ApplicationModal({
                     Are you currently a student? *
                   </label>
                   <select
+                    name="isStudent"
                     required
                     className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
                   >
@@ -266,6 +329,7 @@ function ApplicationModal({
                     </label>
                     <input
                       type="text"
+                      name="university"
                       className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                       placeholder="Kennesaw State University"
                     />
@@ -276,6 +340,7 @@ function ApplicationModal({
                     </label>
                     <input
                       type="text"
+                      name="program"
                       className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                       placeholder="FinTech / Business"
                     />
@@ -287,6 +352,7 @@ function ApplicationModal({
                   </label>
                   <input
                     type="month"
+                    name="expectedGraduation"
                     className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                   />
                 </div>
@@ -307,6 +373,7 @@ function ApplicationModal({
                     : "Why are you interested in payments? *"}
                 </label>
                 <textarea
+                  name={type === "professional" ? "hopeToGet" : "whyPayments"}
                   required
                   rows={3}
                   className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
@@ -319,6 +386,7 @@ function ApplicationModal({
                     : "What do you hope to gain from the Student / Early-Career branch? *"}
                 </label>
                 <textarea
+                  name={type === "professional" ? "canContribute" : "hopeToGain"}
                   required
                   rows={3}
                   className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
@@ -341,6 +409,12 @@ function ApplicationModal({
               </span>
             </label>
           </div>
+
+          {error && (
+            <p className="text-sm text-red-600 bg-red-50 px-4 py-2 rounded-lg">
+              {error}
+            </p>
+          )}
 
           <button
             type="submit"

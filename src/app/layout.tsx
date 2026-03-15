@@ -27,7 +27,7 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "NPI - National Payment Institute",
+  title: "NPI - National Payments Institute",
   description:
     "A curated, application-based institute for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.",
   keywords: [

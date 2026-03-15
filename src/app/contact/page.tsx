@@ -14,13 +14,31 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
-    }, 1200);
+    } catch {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,6 +87,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="text"
+                          name="name"
                           required
                           className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                           placeholder="Jane Smith"
@@ -80,6 +99,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="email"
+                          name="email"
                           required
                           className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                           placeholder="jane@example.com"
@@ -91,6 +111,7 @@ export default function ContactPage() {
                         Subject *
                       </label>
                       <select
+                        name="subject"
                         required
                         className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
                       >
@@ -109,6 +130,7 @@ export default function ContactPage() {
                         Message *
                       </label>
                       <textarea
+                        name="message"
                         required
                         rows={5}
                         className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"

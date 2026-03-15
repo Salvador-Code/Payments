@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Shield body -->
+  <path d="M100 10L175 50V120C175 160 140 190 100 200C60 190 25 160 25 120V50L100 10Z"
+        stroke="#C9A84C" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  <!-- Top connector bar -->
+  <path d="M60 38L140 38" stroke="#C9A84C" stroke-width="5" stroke-linecap="round"/>
+  <!-- Network nodes -->
+  <circle cx="100" cy="18" r="5" fill="#C9A84C"/>
+  <circle cx="60" cy="38" r="5" fill="#C9A84C"/>
+  <circle cx="140" cy="38" r="5" fill="#C9A84C"/>
+  <!-- Connecting lines from top node -->
+  <line x1="100" y1="18" x2="60" y2="38" stroke="#C9A84C" stroke-width="4"/>
+  <line x1="100" y1="18" x2="140" y2="38" stroke="#C9A84C" stroke-width="4"/>
+  <!-- Arrow pointing up-right -->
+  <g stroke="#C9A84C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Arrow shaft -->
+    <line x1="72" y1="155" x2="135" y2="75"/>
+    <!-- Arrow head -->
+    <polyline points="105,72 138,72 138,105"/>
+    <!-- Arrow base/tail split -->
+    <line x1="65" y1="162" x2="95" y2="125"/>
+    <line x1="65" y1="162" x2="65" y2="125"/>
+  </g>
+</svg>

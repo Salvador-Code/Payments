@@ -29,7 +29,7 @@ export default function AboutPage() {
                 About NPI
               </h1>
               <p className="text-lg text-white/70 leading-relaxed">
-                The National Payment Institute was founded with a
+                The National Payments Institute was founded with a
                 simple belief: the payments industry needs a community where
                 experience is valued, conversations are real, and membership
                 means something.

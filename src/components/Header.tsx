@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -26,22 +27,27 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 shadow-lg backdrop-blur-sm py-3"
-          : "bg-white py-5"
+          ? "bg-white/95 shadow-lg backdrop-blur-sm py-2"
+          : "bg-white py-4"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center group-hover:bg-navy-light transition-colors">
-            <span className="text-gold font-bold text-lg">N</span>
-          </div>
+          <Image
+            src="/logo.svg"
+            alt="NPI Logo"
+            width={40}
+            height={40}
+            className="w-10 h-10"
+            priority
+          />
           <div className="flex flex-col">
             <span className="text-navy font-bold text-xl tracking-tight leading-none">
               NPI
             </span>
             <span className="text-slate text-[10px] tracking-widest uppercase leading-none mt-0.5 hidden sm:block">
-              National Payment Institute
+              National Payments Institute
             </span>
           </div>
         </Link>
@@ -91,11 +97,9 @@ export default function Header() {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 top-0 bg-white z-40 flex flex-col">
-          <div className="px-6 py-5 flex items-center justify-between border-b border-ice-dark">
+          <div className="px-6 py-4 flex items-center justify-between border-b border-ice-dark">
             <Link href="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
-              <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-                <span className="text-gold font-bold text-lg">N</span>
-              </div>
+              <Image src="/logo.svg" alt="NPI Logo" width={40} height={40} className="w-10 h-10" />
               <span className="text-navy font-bold text-xl">NPI</span>
             </Link>
             <button onClick={() => setMobileOpen(false)} className="p-2 text-navy">
