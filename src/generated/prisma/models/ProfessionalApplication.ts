@@ -1248,6 +1248,7 @@ export type ProfessionalApplicationCreateManyArgs<ExtArgs extends runtime.Types.
    * The data used to create many ProfessionalApplications.
    */
   data: Prisma.ProfessionalApplicationCreateManyInput | Prisma.ProfessionalApplicationCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1266,6 +1267,7 @@ export type ProfessionalApplicationCreateManyAndReturnArgs<ExtArgs extends runti
    * The data used to create many ProfessionalApplications.
    */
   data: Prisma.ProfessionalApplicationCreateManyInput | Prisma.ProfessionalApplicationCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**

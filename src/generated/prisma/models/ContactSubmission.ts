@@ -1016,6 +1016,7 @@ export type ContactSubmissionCreateManyArgs<ExtArgs extends runtime.Types.Extens
    * The data used to create many ContactSubmissions.
    */
   data: Prisma.ContactSubmissionCreateManyInput | Prisma.ContactSubmissionCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**
@@ -1034,6 +1035,7 @@ export type ContactSubmissionCreateManyAndReturnArgs<ExtArgs extends runtime.Typ
    * The data used to create many ContactSubmissions.
    */
   data: Prisma.ContactSubmissionCreateManyInput | Prisma.ContactSubmissionCreateManyInput[]
+  skipDuplicates?: boolean
 }
 
 /**

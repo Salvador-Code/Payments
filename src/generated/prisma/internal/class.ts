@@ -19,8 +19,8 @@ const config: runtime.GetPrismaClientConfig = {
   "previewFeatures": [],
   "clientVersion": "7.5.0",
   "engineVersion": "280c870be64f457428992c43c1f6d557fab6e29e",
-  "activeProvider": "sqlite",
-  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n}\n\nmodel ProfessionalApplication {\n  id              String   @id @default(cuid())\n  name            String\n  email           String\n  linkedinUrl     String\n  currentTitle    String\n  currentEmployer String\n  yearsExperience String\n  areasOfWork     String\n  roleDescription String\n  hopeToGet       String\n  canContribute   String\n  status          String   @default(\"pending\")\n  createdAt       DateTime @default(now())\n  updatedAt       DateTime @updatedAt\n}\n\nmodel StudentApplication {\n  id                 String   @id @default(cuid())\n  name               String\n  email              String\n  linkedinUrl        String?\n  isStudent          String\n  university         String?\n  program            String?\n  expectedGraduation String?\n  whyPayments        String\n  hopeToGain         String\n  status             String   @default(\"pending\")\n  createdAt          DateTime @default(now())\n  updatedAt          DateTime @updatedAt\n}\n\nmodel ContactSubmission {\n  id        String   @id @default(cuid())\n  name      String\n  email     String\n  subject   String\n  message   String\n  createdAt DateTime @default(now())\n}\n",
+  "activeProvider": "postgresql",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel ProfessionalApplication {\n  id              String   @id @default(cuid())\n  name            String\n  email           String\n  linkedinUrl     String\n  currentTitle    String\n  currentEmployer String\n  yearsExperience String\n  areasOfWork     String\n  roleDescription String\n  hopeToGet       String\n  canContribute   String\n  status          String   @default(\"pending\")\n  createdAt       DateTime @default(now())\n  updatedAt       DateTime @updatedAt\n}\n\nmodel StudentApplication {\n  id                 String   @id @default(cuid())\n  name               String\n  email              String\n  linkedinUrl        String?\n  isStudent          String\n  university         String?\n  program            String?\n  expectedGraduation String?\n  whyPayments        String\n  hopeToGain         String\n  status             String   @default(\"pending\")\n  createdAt          DateTime @default(now())\n  updatedAt          DateTime @updatedAt\n}\n\nmodel ContactSubmission {\n  id        String   @id @default(cuid())\n  name      String\n  email     String\n  subject   String\n  message   String\n  createdAt DateTime @default(now())\n}\n",
   "runtimeDataModel": {
     "models": {},
     "enums": {},
@@ -45,10 +45,10 @@ async function decodeBase64AsWasm(wasmBase64: string): Promise<WebAssembly.Modul
 }
 
 config.compilerWasm = {
-  getRuntime: async () => await import("@prisma/client/runtime/query_compiler_fast_bg.sqlite.mjs"),
+  getRuntime: async () => await import("@prisma/client/runtime/query_compiler_fast_bg.postgresql.mjs"),
 
   getQueryCompilerWasmModule: async () => {
-    const { wasm } = await import("@prisma/client/runtime/query_compiler_fast_bg.sqlite.wasm-base64.mjs")
+    const { wasm } = await import("@prisma/client/runtime/query_compiler_fast_bg.postgresql.wasm-base64.mjs")
     return await decodeBase64AsWasm(wasm)
   },
 
