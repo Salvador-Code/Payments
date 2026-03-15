@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+echo "DATABASE_URL starts with: $(echo $DATABASE_URL | cut -c1-30)..."
+
 # Wait for database to be reachable before running migrations
 MAX_RETRIES=10
 RETRY=0
