@@ -21,18 +21,24 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy via-navy-light to-navy-lighter py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative bg-navy py-32 overflow-hidden grain">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+              <p className="text-xs font-semibold text-gold/70 tracking-[0.2em] uppercase mb-4">
+                Our Story
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
                 About NPI
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed">
-                The National Payments Institute was founded with a
-                simple belief: the payments industry needs a community where
-                experience is valued, conversations are real, and membership
-                means something.
+              <p className="text-lg text-white/40 leading-relaxed max-w-xl">
+                The National Payments Institute was founded with a simple
+                belief: the payments industry needs a community where experience
+                is valued, conversations are real, and membership means
+                something.
               </p>
             </div>
           </AnimatedSection>
@@ -40,36 +46,59 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <h2 className="text-3xl font-bold text-navy mb-6">Our Mission</h2>
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+                Our Mission
+              </p>
+              <h2 className="text-3xl font-bold text-navy tracking-tight mb-6">
+                The community we wished existed
+              </h2>
               <p className="text-slate leading-relaxed mb-4">
                 We set out to build the community we wished existed when we
                 started our careers in payments. Too many industry groups
                 optimize for member count over member quality. Too many events
-                are vendor pitches disguised as thought leadership. Too many
-                &ldquo;networks&rdquo; are just email lists.
+                are vendor pitches disguised as thought leadership.
               </p>
               <p className="text-slate leading-relaxed">
-                NPI is different by design. We review every application. We
-                cap our events. We separate Professional and Student tracks so
-                that everyone gets value at their level. And we&apos;re rooted
-                in the real work of payments&mdash;not the buzzwords.
+                NPI is different by design. We review every application. We cap
+                our events. We separate Professional and Student tracks so that
+                everyone gets value at their level. And we&apos;re rooted in the
+                real work of payments&mdash;not the buzzwords.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Target, label: "Curated Membership", desc: "Every application reviewed by our team" },
-                  { icon: Users, label: "Real Practitioners", desc: "2+ years payments experience required" },
-                  { icon: GraduationCap, label: "Student Pipeline", desc: "Dedicated track for emerging talent" },
-                  { icon: Globe, label: "Atlanta Roots", desc: "Built for the U.S. payments ecosystem" },
+                  {
+                    icon: Target,
+                    label: "Curated Membership",
+                    desc: "Every application reviewed by our team",
+                  },
+                  {
+                    icon: Users,
+                    label: "Real Practitioners",
+                    desc: "2+ years payments experience required",
+                  },
+                  {
+                    icon: GraduationCap,
+                    label: "Student Pipeline",
+                    desc: "Dedicated track for emerging talent",
+                  },
+                  {
+                    icon: Globe,
+                    label: "Atlanta Roots",
+                    desc: "Built for the U.S. payments ecosystem",
+                  },
                 ].map((item, i) => (
-                  <div key={i} className="bg-ice rounded-xl p-5">
-                    <item.icon size={24} className="text-gold-dark mb-3" />
+                  <div
+                    key={i}
+                    className="bg-ice/70 border border-ice-dark rounded-xl p-5 hover:bg-ice transition-colors"
+                  >
+                    <item.icon size={20} className="text-gold-dark mb-3" />
                     <h4 className="text-sm font-semibold text-navy mb-1">
                       {item.label}
                     </h4>
@@ -83,22 +112,23 @@ export default function AboutPage() {
       </section>
 
       {/* Our Standard */}
-      <section className="py-20 bg-ice">
+      <section className="py-24 bg-ice/50">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy mb-4">
-                Our Standard for Membership
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+                Quality First
+              </p>
+              <h2 className="text-3xl font-bold text-navy tracking-tight">
+                Our standard for membership
               </h2>
             </div>
-            <div className="bg-white rounded-2xl shadow-sm p-8 sm:p-10">
+            <div className="bg-white rounded-2xl border border-ice-dark p-8 sm:p-10">
               <p className="text-slate leading-relaxed text-center max-w-2xl mx-auto mb-10">
-                We believe the strength of any professional community comes from
-                the quality of its members. That&apos;s why we review every
-                application, look for real experience, and maintain a clear
-                distinction between Professional and Student tracks. This
-                isn&apos;t a mass mailing list&mdash;it&apos;s a curated network
-                where your time is respected.
+                The strength of any professional community comes from the
+                quality of its members. We review every application, look for
+                real experience, and maintain a clear distinction between
+                Professional and Student tracks.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-6">
@@ -106,7 +136,7 @@ export default function AboutPage() {
                   {
                     icon: Shield,
                     title: "Selective by Design",
-                    desc: "We don't optimize for maximum members. We optimize for the right mix.",
+                    desc: "We don\u2019t optimize for maximum members. We optimize for the right mix.",
                   },
                   {
                     icon: Scale,
@@ -121,12 +151,14 @@ export default function AboutPage() {
                 ].map((item, i) => (
                   <div key={i} className="text-center">
                     <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <item.icon size={24} className="text-gold-dark" />
+                      <item.icon size={22} className="text-gold-dark" />
                     </div>
                     <h4 className="text-sm font-semibold text-navy mb-1">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-slate">{item.desc}</p>
+                    <p className="text-xs text-slate leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -136,144 +168,129 @@ export default function AboutPage() {
       </section>
 
       {/* Founding Story */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy mb-4">
-                Where We Come From
+            <div className="text-center mb-14">
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+                Origins
+              </p>
+              <h2 className="text-3xl font-bold text-navy tracking-tight">
+                Where we come from
               </h2>
             </div>
           </AnimatedSection>
 
-          <div className="space-y-8">
-            <AnimatedSection>
-              <div className="flex items-start gap-5">
-                <div className="shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-                  <Award size={20} className="text-gold" />
+          <div className="space-y-6">
+            {[
+              {
+                icon: Award,
+                iconBg: "bg-navy",
+                iconColor: "text-gold",
+                title: "Founded by Visa Product Leadership",
+                desc: "NPI was founded by payments professionals with hands-on experience building products at scale. Our founding team includes product leaders from Visa and other top-tier payments organizations.",
+              },
+              {
+                icon: GraduationCap,
+                iconBg: "bg-gold",
+                iconColor: "text-navy",
+                title: "Academic Backing from KSU FinTech",
+                desc: "Our partnership with Kennesaw State University\u2019s FinTech program ensures a strong pipeline of student talent and academic rigor backing our educational initiatives.",
+              },
+              {
+                icon: Lightbulb,
+                iconBg: "bg-navy",
+                iconColor: "text-gold",
+                title: "Rooted in Atlanta",
+                desc: "Atlanta is home to some of the largest payments processors and FinTech companies in the world. We\u2019re building NPI from this epicenter, serving the broader U.S. payments ecosystem.",
+              },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="flex items-start gap-5 bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-xl p-6 transition-all duration-300">
+                  <div
+                    className={`shrink-0 w-10 h-10 ${item.iconBg} rounded-lg flex items-center justify-center`}
+                  >
+                    <item.icon size={20} className={item.iconColor} />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-navy mb-1.5">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-navy mb-2">
-                    Founded by Visa Product Leadership
-                  </h3>
-                  <p className="text-slate text-sm leading-relaxed">
-                    NPI was founded by payments professionals with hands-on
-                    experience building products at scale. Our founding team
-                    includes product leaders from Visa and other top-tier
-                    payments organizations who saw firsthand the gap between
-                    existing industry groups and what practitioners actually
-                    need.
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.1}>
-              <div className="flex items-start gap-5">
-                <div className="shrink-0 w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                  <GraduationCap size={20} className="text-navy" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-navy mb-2">
-                    Academic Backing from KSU FinTech
-                  </h3>
-                  <p className="text-slate text-sm leading-relaxed">
-                    Our partnership with Kennesaw State University&apos;s FinTech
-                    program ensures we have a strong pipeline of student talent
-                    and academic rigor backing our educational initiatives. This
-                    partnership is central to our Student & Early-Career branch.
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="flex items-start gap-5">
-                <div className="shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-                  <Lightbulb size={20} className="text-gold" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-navy mb-2">
-                    Rooted in Atlanta
-                  </h3>
-                  <p className="text-slate text-sm leading-relaxed">
-                    Atlanta is home to some of the largest payments processors
-                    and FinTech companies in the world. We&apos;re building
-                    NPI from this epicenter, with plans to serve the broader
-                    U.S. payments ecosystem through both in-person and virtual
-                    experiences.
-                  </p>
-                </div>
-              </div>
-            </AnimatedSection>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Veterans Initiative */}
-      <section id="veterans" className="py-20 bg-white scroll-mt-24">
-        <div className="mx-auto max-w-4xl px-6">
+      <section id="veterans" className="py-24 bg-navy scroll-mt-24 relative overflow-hidden grain">
+        <div className="absolute inset-0">
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
           <AnimatedSection>
-            <div className="text-center mb-12">
+            <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
-                <Medal size={14} className="text-gold-dark" />
-                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
+                <Medal size={14} className="text-gold" />
+                <span className="text-gold text-xs font-semibold tracking-wider uppercase">
                   Giving Back
                 </span>
               </div>
-              <h2 className="text-3xl font-bold text-navy mb-4">
-                Our Commitment to Veterans
+              <h2 className="text-3xl font-bold text-white tracking-tight mb-4">
+                Our commitment to veterans
               </h2>
-              <p className="text-slate max-w-2xl mx-auto">
-                We believe the payments industry has a responsibility to create
-                pathways for those who&apos;ve served. Veterans bring discipline,
-                leadership, and adaptability&mdash;exactly the traits that make
-                great payments professionals.
+              <p className="text-white/40 max-w-2xl mx-auto">
+                Veterans bring discipline, leadership, and
+                adaptability&mdash;exactly the traits that make great payments
+                professionals.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <AnimatedSection>
-              <div className="flex items-start gap-5">
-                <div className="shrink-0 w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                  <Medal size={20} className="text-navy" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-navy mb-2">
-                    Free Veterans Payments Cohorts
-                  </h3>
-                  <p className="text-slate text-sm leading-relaxed">
-                    Each quarter, we run a free, structured cohort for U.S.
-                    military veterans and transitioning service members. The
-                    program covers the fundamentals of payments&mdash;card
-                    networks, ACH, real-time payments, risk, compliance, and
-                    more&mdash;taught by NPI Professional members who volunteer
-                    their expertise. Cohorts are small (15&ndash;20 veterans) to
-                    ensure real mentorship and hands-on learning.
-                  </p>
+              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-7">
+                <div className="flex items-start gap-5">
+                  <div className="shrink-0 w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
+                    <Medal size={20} className="text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      Free Veterans Payments Cohorts
+                    </h3>
+                    <p className="text-white/40 text-sm leading-relaxed">
+                      Each quarter, we run a free, structured cohort for U.S.
+                      military veterans and transitioning service members. Small
+                      cohorts of 15&ndash;20 veterans ensure real mentorship and
+                      hands-on learning.
+                    </p>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <div className="flex items-start gap-5">
-                <div className="shrink-0 w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-                  <Handshake size={20} className="text-gold" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-navy mb-2">
-                    Quarterly Veterans Networking Night
-                  </h3>
-                  <p className="text-slate text-sm leading-relaxed">
-                    After each cohort, we host a dedicated networking dinner
-                    where veterans connect face-to-face with payments
-                    professionals from our member community. No awkward panels or
-                    cold intros&mdash;just an intimate dinner where real
-                    relationships form. Our Professional members show up as
-                    mentors, connectors, and advocates. These nights are
-                    completely free for veteran attendees.
-                  </p>
+              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-7">
+                <div className="flex items-start gap-5">
+                  <div className="shrink-0 w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
+                    <Handshake size={20} className="text-gold" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      Quarterly Veterans Networking Night
+                    </h3>
+                    <p className="text-white/40 text-sm leading-relaxed">
+                      Dedicated networking dinners where veterans connect
+                      face-to-face with payments professionals. No awkward
+                      panels&mdash;just intimate dinner where real relationships
+                      form. Completely free for veteran attendees.
+                    </p>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -282,12 +299,15 @@ export default function AboutPage() {
       </section>
 
       {/* What's Coming */}
-      <section className="py-20 bg-ice">
+      <section className="py-24 bg-ice/50">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy mb-4">
-                What&apos;s Coming Next
+            <div className="text-center mb-14">
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+                Roadmap
+              </p>
+              <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
+                What&apos;s coming next
               </h2>
               <p className="text-slate max-w-xl mx-auto">
                 We&apos;re building NPI in phases. Here&apos;s what&apos;s on
@@ -331,15 +351,15 @@ export default function AboutPage() {
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div
-                  className={`rounded-xl p-6 h-full ${
+                  className={`rounded-2xl p-7 h-full ${
                     item.active
                       ? "bg-navy text-white"
                       : "bg-white border border-ice-dark"
                   }`}
                 >
                   <span
-                    className={`text-xs font-semibold tracking-wider uppercase ${
-                      item.active ? "text-gold" : "text-gold-dark"
+                    className={`text-[10px] font-semibold tracking-[0.15em] uppercase ${
+                      item.active ? "text-gold/70" : "text-gold-dark"
                     }`}
                   >
                     {item.phase}
@@ -351,15 +371,19 @@ export default function AboutPage() {
                   >
                     {item.title}
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2.5">
                     {item.items.map((li, j) => (
                       <li
                         key={j}
                         className={`text-sm flex items-start gap-2 ${
-                          item.active ? "text-white/70" : "text-slate"
+                          item.active ? "text-white/50" : "text-slate"
                         }`}
                       >
-                        <span className={item.active ? "text-gold" : "text-gold-dark"}>
+                        <span
+                          className={
+                            item.active ? "text-gold/60" : "text-gold-dark"
+                          }
+                        >
                           &bull;
                         </span>
                         {li}
@@ -374,27 +398,26 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-navy mb-4">
-              Be Part of Something Selective
+            <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
+              Be part of something selective
             </h2>
             <p className="text-slate mb-8 max-w-xl mx-auto">
               If you&apos;re serious about payments and want to join a community
-              that values quality over quantity, we&apos;d love to hear from
-              you.
+              that values quality over quantity, we&apos;d love to hear from you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/membership#professional"
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-lg hover:bg-gold-light transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
               >
                 Apply as Professional <ArrowRight size={16} />
               </Link>
               <Link
                 href="/membership#student"
-                className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-7 py-3.5 rounded-lg hover:bg-navy hover:text-white transition-all"
+                className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-navy hover:text-white transition-all"
               >
                 Apply as Student
               </Link>

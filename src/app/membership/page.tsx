@@ -36,9 +36,11 @@ function ApplicationModal({
     try {
       if (type === "professional") {
         const checkedAreas: string[] = [];
-        form.querySelectorAll<HTMLInputElement>('input[name="area"]:checked').forEach((cb) => {
-          checkedAreas.push(cb.value);
-        });
+        form
+          .querySelectorAll<HTMLInputElement>('input[name="area"]:checked')
+          .forEach((cb) => {
+            checkedAreas.push(cb.value);
+          });
 
         const res = await fetch("/api/apply-professional", {
           method: "POST",
@@ -86,29 +88,32 @@ function ApplicationModal({
     }
   };
 
+  const inputClass =
+    "w-full border border-ice-dark rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all placeholder:text-slate-light";
+
   if (submitted) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-black/50">
-        <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle size={32} className="text-green-600" />
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-navy/60">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-10 text-center">
+          <div className="w-14 h-14 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-5">
+            <CheckCircle size={28} className="text-success" />
           </div>
           <h3 className="text-2xl font-bold text-navy mb-3">
             Application Received
           </h3>
           <p className="text-slate text-sm mb-2">
-            Thanks for your application. We typically review applications within
-            7&ndash;10 business days and will email you with next steps.
+            Thanks for your application. We review within 7&ndash;10 business
+            days and will email you with next steps.
           </p>
           {type === "student" && (
             <p className="text-slate text-xs mt-2">
-              If you&apos;re already at or near 2 years of experience, our team
-              may consider you for Professional membership.
+              If you&apos;re near 2 years of experience, our team may consider
+              you for Professional membership.
             </p>
           )}
           <button
             onClick={onClose}
-            className="mt-6 bg-navy text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-navy-light transition-colors"
+            className="mt-6 bg-navy text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-navy-light transition-colors"
           >
             Close
           </button>
@@ -118,121 +123,122 @@ function ApplicationModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-20 overflow-y-auto modal-overlay bg-black/50">
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-20 overflow-y-auto modal-overlay bg-navy/60">
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full my-8">
         {/* Modal header */}
         <div
           className={`p-6 rounded-t-2xl ${
             type === "professional"
-              ? "bg-gradient-to-r from-navy to-navy-light"
+              ? "bg-navy"
               : "bg-gradient-to-r from-gold-dark to-gold"
           }`}
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {type === "professional" ? (
-                <Shield size={24} className="text-gold" />
+                <Shield size={22} className="text-gold" />
               ) : (
-                <GraduationCap size={24} className="text-navy" />
+                <GraduationCap size={22} className="text-navy" />
               )}
               <h3
-                className={`text-xl font-bold ${
+                className={`text-lg font-bold ${
                   type === "professional" ? "text-white" : "text-navy"
                 }`}
               >
                 {type === "professional"
-                  ? "Professional Membership Application"
+                  ? "Professional Application"
                   : "Student / Early-Career Application"}
               </h3>
             </div>
             <button
               onClick={onClose}
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1.5 rounded-lg transition-colors ${
                 type === "professional"
-                  ? "text-white/70 hover:text-white hover:bg-white/10"
-                  : "text-navy/70 hover:text-navy hover:bg-navy/10"
+                  ? "text-white/50 hover:text-white hover:bg-white/10"
+                  : "text-navy/50 hover:text-navy hover:bg-navy/10"
               }`}
             >
-              <X size={20} />
+              <X size={18} />
             </button>
           </div>
           <p
             className={`text-sm mt-2 ${
-              type === "professional" ? "text-white/60" : "text-navy/60"
+              type === "professional" ? "text-white/40" : "text-navy/50"
             }`}
           >
-            We&apos;re intentionally small and selective. This application helps
-            us ensure the right mix of members.
+            We&apos;re intentionally small and selective. This helps us ensure
+            the right mix.
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-6">
+        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-7">
           {/* About You */}
           <div>
-            <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
               About You
             </h4>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-navy-lighter mb-1">
+                <label className="block text-sm font-medium text-navy/70 mb-1.5">
                   Full Name *
                 </label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                  className={inputClass}
                   placeholder="Jane Smith"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy-lighter mb-1">
+                <label className="block text-sm font-medium text-navy/70 mb-1.5">
                   Email *
                 </label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                  className={inputClass}
                   placeholder="jane@example.com"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy-lighter mb-1">
-                  LinkedIn URL {type === "student" ? "(optional)" : "*"}
+                <label className="block text-sm font-medium text-navy/70 mb-1.5">
+                  LinkedIn URL{" "}
+                  {type === "student" ? "(optional)" : "*"}
                 </label>
                 <input
                   type="url"
                   name="linkedinUrl"
                   required={type === "professional"}
-                  className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                  className={inputClass}
                   placeholder="https://linkedin.com/in/..."
                 />
               </div>
               {type === "professional" && (
                 <>
                   <div>
-                    <label className="block text-sm font-medium text-navy-lighter mb-1">
+                    <label className="block text-sm font-medium text-navy/70 mb-1.5">
                       Current Title *
                     </label>
                     <input
                       type="text"
                       name="currentTitle"
                       required
-                      className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className={inputClass}
                       placeholder="Payments Product Manager"
                     />
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="block text-sm font-medium text-navy-lighter mb-1">
+                    <label className="block text-sm font-medium text-navy/70 mb-1.5">
                       Current Employer *
                     </label>
                     <input
                       type="text"
                       name="currentEmployer"
                       required
-                      className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className={inputClass}
                       placeholder="Acme Payments Inc."
                     />
                   </div>
@@ -243,21 +249,17 @@ function ApplicationModal({
 
           {/* Experience / Status */}
           <div>
-            <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
               {type === "professional" ? "Experience" : "Status"}
             </h4>
 
             {type === "professional" ? (
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-navy-lighter mb-1">
-                    How many years have you worked in payments? *
+                  <label className="block text-sm font-medium text-navy/70 mb-1.5">
+                    Years in payments? *
                   </label>
-                  <select
-                    name="yearsExperience"
-                    required
-                    className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
-                  >
+                  <select name="yearsExperience" required className={inputClass}>
                     <option value="">Select...</option>
                     <option value="2-4">2&ndash;4 years</option>
                     <option value="5-9">5&ndash;9 years</option>
@@ -266,8 +268,8 @@ function ApplicationModal({
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-navy-lighter mb-1">
-                    Which areas of payments do you work in? *
+                  <label className="block text-sm font-medium text-navy/70 mb-1.5">
+                    Areas of work *
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     {[
@@ -280,7 +282,10 @@ function ApplicationModal({
                       "Strategy",
                       "Other",
                     ].map((area) => (
-                      <label key={area} className="flex items-center gap-2 text-sm text-navy-lighter">
+                      <label
+                        key={area}
+                        className="flex items-center gap-2.5 text-sm text-navy/70 px-3 py-2 rounded-lg hover:bg-ice/50 transition-colors cursor-pointer"
+                      >
                         <input
                           type="checkbox"
                           name="area"
@@ -293,14 +298,14 @@ function ApplicationModal({
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-navy-lighter mb-1">
-                    Tell us briefly how your role connects to payments *
+                  <label className="block text-sm font-medium text-navy/70 mb-1.5">
+                    How does your role connect to payments? *
                   </label>
                   <textarea
                     name="roleDescription"
                     required
                     rows={3}
-                    className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
+                    className={`${inputClass} resize-none`}
                     placeholder="I manage the card-present processing pipeline for..."
                   />
                 </div>
@@ -308,52 +313,52 @@ function ApplicationModal({
             ) : (
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-navy-lighter mb-1">
+                  <label className="block text-sm font-medium text-navy/70 mb-1.5">
                     Are you currently a student? *
                   </label>
-                  <select
-                    name="isStudent"
-                    required
-                    className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
-                  >
+                  <select name="isStudent" required className={inputClass}>
                     <option value="">Select...</option>
                     <option value="yes">Yes, currently enrolled</option>
-                    <option value="recent">Recently graduated (within 1 year)</option>
-                    <option value="no">No, early-career professional (&lt;2 years in payments)</option>
+                    <option value="recent">
+                      Recently graduated (within 1 year)
+                    </option>
+                    <option value="no">
+                      No, early-career (&lt;2 years in payments)
+                    </option>
                   </select>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-navy-lighter mb-1">
+                    <label className="block text-sm font-medium text-navy/70 mb-1.5">
                       University / Institution
                     </label>
                     <input
                       type="text"
                       name="university"
-                      className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className={inputClass}
                       placeholder="Kennesaw State University"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-navy-lighter mb-1">
+                    <label className="block text-sm font-medium text-navy/70 mb-1.5">
                       Program / Major
                     </label>
                     <input
                       type="text"
                       name="program"
-                      className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className={inputClass}
                       placeholder="FinTech / Business"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-navy-lighter mb-1">
+                  <label className="block text-sm font-medium text-navy/70 mb-1.5">
                     Expected Graduation Date
                   </label>
                   <input
                     type="month"
                     name="expectedGraduation"
-                    className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                    className={inputClass}
                   />
                 </div>
               </div>
@@ -362,42 +367,42 @@ function ApplicationModal({
 
           {/* Intent & Fit */}
           <div>
-            <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
               {type === "professional" ? "Intent & Fit" : "Intent"}
             </h4>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-navy-lighter mb-1">
+                <label className="block text-sm font-medium text-navy/70 mb-1.5">
                   {type === "professional"
-                    ? "What do you hope to get out of this community? *"
+                    ? "What do you hope to get from this community? *"
                     : "Why are you interested in payments? *"}
                 </label>
                 <textarea
                   name={type === "professional" ? "hopeToGet" : "whyPayments"}
                   required
                   rows={3}
-                  className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
+                  className={`${inputClass} resize-none`}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy-lighter mb-1">
+                <label className="block text-sm font-medium text-navy/70 mb-1.5">
                   {type === "professional"
                     ? "What can you contribute to other members? *"
-                    : "What do you hope to gain from the Student / Early-Career branch? *"}
+                    : "What do you hope to gain from the Student branch? *"}
                 </label>
                 <textarea
                   name={type === "professional" ? "canContribute" : "hopeToGain"}
                   required
                   rows={3}
-                  className="w-full border border-ice-dark rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
+                  className={`${inputClass} resize-none`}
                 />
               </div>
             </div>
           </div>
 
           {/* Agreement */}
-          <div className="border-t border-ice-dark pt-4">
-            <label className="flex items-start gap-3">
+          <div className="border-t border-ice pt-5">
+            <label className="flex items-start gap-3 cursor-pointer">
               <input
                 type="checkbox"
                 required
@@ -411,7 +416,7 @@ function ApplicationModal({
           </div>
 
           {error && (
-            <p className="text-sm text-red-600 bg-red-50 px-4 py-2 rounded-lg">
+            <p className="text-sm text-error bg-error/5 border border-error/10 px-4 py-2.5 rounded-xl">
               {error}
             </p>
           )}
@@ -419,7 +424,7 @@ function ApplicationModal({
           <button
             type="submit"
             disabled={loading}
-            className={`w-full flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all ${
+            className={`w-full flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-xl transition-all ${
               type === "professional"
                 ? "bg-navy text-white hover:bg-navy-light"
                 : "bg-gold text-navy hover:bg-gold-light"
@@ -427,11 +432,11 @@ function ApplicationModal({
           >
             {loading ? (
               <>
-                <Loader2 size={18} className="animate-spin" /> Submitting...
+                <Loader2 size={16} className="animate-spin" /> Submitting...
               </>
             ) : (
               <>
-                Submit Application <ArrowRight size={16} />
+                Submit Application <ArrowRight size={14} />
               </>
             )}
           </button>
@@ -451,20 +456,24 @@ function FaqItem({
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-ice-dark">
+    <div className="border-b border-ice">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left"
+        className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-sm font-medium text-navy pr-4">{question}</span>
+        <span className="text-sm font-medium text-navy pr-4 group-hover:text-gold-dark transition-colors">
+          {question}
+        </span>
         {open ? (
-          <ChevronUp size={18} className="text-slate shrink-0" />
+          <ChevronUp size={16} className="text-slate shrink-0" />
         ) : (
-          <ChevronDown size={18} className="text-slate shrink-0" />
+          <ChevronDown size={16} className="text-slate shrink-0" />
         )}
       </button>
       {open && (
-        <p className="text-sm text-slate pb-5 leading-relaxed">{answer}</p>
+        <p className="text-sm text-slate pb-5 leading-relaxed -mt-1">
+          {answer}
+        </p>
       )}
     </div>
   );
@@ -486,26 +495,32 @@ export default function MembershipPage() {
       )}
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy via-navy-light to-navy-lighter py-24">
-        <div className="mx-auto max-w-7xl px-6 text-center">
+      <section className="relative bg-navy py-32 overflow-hidden grain">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl -translate-x-1/2" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Membership by Application, Not Algorithm
+            <p className="text-xs font-semibold text-gold/70 tracking-[0.2em] uppercase mb-4">
+              Membership
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+              By application, not algorithm
             </h1>
-            <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-white/40 max-w-2xl mx-auto mb-10">
               We don&apos;t optimize for maximum member count. We optimize for
               the right mix of practitioners and serious future practitioners.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => setModalType("professional")}
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-lg hover:bg-gold-light transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
               >
-                Apply as Professional <ArrowRight size={16} />
+                Apply as Professional <ArrowRight size={14} />
               </button>
               <button
                 onClick={() => setModalType("student")}
-                className="inline-flex items-center gap-2 border-2 border-white/30 text-white font-semibold px-7 py-3.5 rounded-lg hover:border-gold hover:text-gold transition-all"
+                className="inline-flex items-center gap-2 border border-white/15 text-white/80 font-medium px-7 py-3.5 rounded-xl hover:bg-white/5 hover:border-white/25 transition-all"
               >
                 Apply as Student
               </button>
@@ -518,9 +533,14 @@ export default function MembershipPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-navy text-center mb-12">
-              Compare Membership Branches
-            </h2>
+            <div className="text-center mb-12">
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+                Side by Side
+              </p>
+              <h2 className="text-3xl font-bold text-navy tracking-tight">
+                Compare membership branches
+              </h2>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection>
@@ -528,20 +548,20 @@ export default function MembershipPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr>
-                    <th className="text-left py-4 px-4 text-slate font-medium border-b-2 border-ice-dark">
+                    <th className="text-left py-4 px-4 text-slate font-medium border-b border-ice-dark">
                       &nbsp;
                     </th>
                     <th className="text-left py-4 px-4 border-b-2 border-navy">
                       <div className="flex items-center gap-2">
-                        <Shield size={18} className="text-gold-dark" />
+                        <Shield size={16} className="text-gold-dark" />
                         <span className="font-semibold text-navy">
-                          Professional Branch
+                          Professional
                         </span>
                       </div>
                     </th>
                     <th className="text-left py-4 px-4 border-b-2 border-gold">
                       <div className="flex items-center gap-2">
-                        <GraduationCap size={18} className="text-gold-dark" />
+                        <GraduationCap size={16} className="text-gold-dark" />
                         <span className="font-semibold text-navy">
                           Student & Early-Career
                         </span>
@@ -587,12 +607,17 @@ export default function MembershipPage() {
                       stu: "Apply for Professional when eligible",
                     },
                   ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-ice/50" : ""}>
-                      <td className="py-3 px-4 font-medium text-navy">
+                    <tr
+                      key={i}
+                      className={`${
+                        i % 2 === 0 ? "bg-ice/30" : ""
+                      } hover:bg-ice/50 transition-colors`}
+                    >
+                      <td className="py-3.5 px-4 font-medium text-navy">
                         {row.label}
                       </td>
-                      <td className="py-3 px-4 text-navy-lighter">{row.pro}</td>
-                      <td className="py-3 px-4 text-navy-lighter">{row.stu}</td>
+                      <td className="py-3.5 px-4 text-navy/60">{row.pro}</td>
+                      <td className="py-3.5 px-4 text-navy/60">{row.stu}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -602,16 +627,16 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* Professional Membership Detail */}
-      <section id="professional" className="py-20 bg-ice scroll-mt-24">
+      {/* Professional Detail */}
+      <section id="professional" className="py-20 bg-ice/50 scroll-mt-24">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center">
-                <Shield size={24} className="text-gold" />
+              <div className="w-11 h-11 bg-navy rounded-xl flex items-center justify-center">
+                <Shield size={22} className="text-gold" />
               </div>
               <div>
-                <span className="text-xs text-gold-dark font-semibold tracking-wider uppercase">
+                <span className="text-[10px] text-gold-dark font-semibold tracking-[0.15em] uppercase">
                   Curated Branch
                 </span>
                 <h2 className="text-2xl font-bold text-navy">
@@ -621,25 +646,25 @@ export default function MembershipPage() {
             </div>
 
             <p className="text-slate leading-relaxed mb-8">
-              NPI Professional membership is for people who already live and
-              breathe payments. It is selective by design, so the community
-              remains relevant, focused, and worth your time.
+              For people who already live and breathe payments. Selective by
+              design, so the community remains relevant, focused, and worth
+              your time.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-3">
+            <div className="grid sm:grid-cols-2 gap-5 mb-8">
+              <div className="bg-white rounded-xl border border-ice-dark p-6">
+                <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
                   Eligibility
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {[
-                    "2+ years working in payments (product, risk, ops, compliance, sales, engineering, etc.)",
+                    "2+ years working in payments (product, risk, ops, compliance, etc.)",
                     "Clear explanation of how your role touches payments",
                     "Willingness to share and mentor, not just consume",
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-sm text-navy-lighter"
+                      className="flex items-start gap-2 text-sm text-navy/60"
                     >
                       <CheckCircle
                         size={14}
@@ -650,20 +675,20 @@ export default function MembershipPage() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-3">
+              <div className="bg-white rounded-xl border border-ice-dark p-6">
+                <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
                   Benefits
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {[
-                    "Access to Professional-only sessions and discussion circles",
-                    "Priority invitations and preferred pricing on intimate events",
-                    "Early access to future course cohorts and the mastery certification exam",
-                    "Professional badge you can add to LinkedIn (once accepted)",
+                    "Professional-only sessions and discussion circles",
+                    "Priority invitations and preferred event pricing",
+                    "Early access to future courses and certification exam",
+                    "Professional badge for LinkedIn (once accepted)",
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-sm text-navy-lighter"
+                      className="flex items-start gap-2 text-sm text-navy/60"
                     >
                       <CheckCircle
                         size={14}
@@ -678,24 +703,24 @@ export default function MembershipPage() {
 
             <button
               onClick={() => setModalType("professional")}
-              className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-navy-light transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-navy-light transition-all"
             >
-              Start Professional Application <ArrowRight size={16} />
+              Start Application <ArrowRight size={14} />
             </button>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Student Membership Detail */}
+      {/* Student Detail */}
       <section id="student" className="py-20 bg-white scroll-mt-24">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center">
-                <GraduationCap size={24} className="text-navy" />
+              <div className="w-11 h-11 bg-gold rounded-xl flex items-center justify-center">
+                <GraduationCap size={22} className="text-navy" />
               </div>
               <div>
-                <span className="text-xs text-gold-dark font-semibold tracking-wider uppercase">
+                <span className="text-[10px] text-gold-dark font-semibold tracking-[0.15em] uppercase">
                   Growth Track
                 </span>
                 <h2 className="text-2xl font-bold text-navy">
@@ -705,25 +730,24 @@ export default function MembershipPage() {
             </div>
 
             <p className="text-slate leading-relaxed mb-8">
-              We created the Student & Early-Career branch for those who are
-              serious about entering payments but still building experience.
-              This track gives you access to learning and exposure, without
-              misrepresenting your current level to employers or peers.
+              For those serious about entering payments but still building
+              experience. Access learning, exposure, and connections without
+              misrepresenting your current level.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-6 mb-6">
-              <div className="bg-ice rounded-xl p-6">
-                <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-3">
+            <div className="grid sm:grid-cols-2 gap-5 mb-5">
+              <div className="bg-ice/50 rounded-xl border border-ice-dark p-6">
+                <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
                   Eligibility
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {[
-                    "Currently enrolled in a degree-granting university program or <2 years in payments roles",
+                    "Enrolled in a degree program or <2 years in payments",
                     "Serious interest in payments as a career",
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-sm text-navy-lighter"
+                      className="flex items-start gap-2 text-sm text-navy/60"
                     >
                       <CheckCircle
                         size={14}
@@ -734,20 +758,20 @@ export default function MembershipPage() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-ice rounded-xl p-6">
-                <h4 className="text-sm font-semibold text-navy uppercase tracking-wider mb-3">
+              <div className="bg-ice/50 rounded-xl border border-ice-dark p-6">
+                <h4 className="text-xs font-semibold text-navy uppercase tracking-[0.15em] mb-4">
                   Benefits
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {[
-                    "Access to student-focused sessions and content",
-                    "Access to recordings of select Professional talks (or some events)",
+                    "Student-focused sessions and content",
+                    "Recordings of select Professional talks",
                     "Event discounts",
-                    "Clear path to apply for Professional status once you hit 2+ years",
+                    "Clear path to Professional when you reach 2+ years",
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 text-sm text-navy-lighter"
+                      className="flex items-start gap-2 text-sm text-navy/60"
                     >
                       <CheckCircle
                         size={14}
@@ -760,51 +784,56 @@ export default function MembershipPage() {
               </div>
             </div>
 
-            <p className="text-sm text-slate bg-ice p-4 rounded-lg mb-8">
-              Student & Early-Career members are clearly marked as such in the
-              community, so everyone knows who is still building experience.
+            <p className="text-sm text-slate bg-ice/50 border border-ice-dark p-4 rounded-xl mb-8">
+              Student members are clearly marked in the community. Everyone
+              knows who is still building experience.
             </p>
 
             <button
               onClick={() => setModalType("student")}
-              className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-lg hover:bg-gold-light transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
             >
-              Apply as Student / Early-Career <ArrowRight size={16} />
+              Apply as Student <ArrowRight size={14} />
             </button>
           </AnimatedSection>
         </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-ice scroll-mt-24">
+      <section id="faq" className="py-20 bg-ice/50 scroll-mt-24">
         <div className="mx-auto max-w-3xl px-6">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-navy text-center mb-12">
-              Frequently Asked Questions
-            </h2>
+            <div className="text-center mb-12">
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+                Questions
+              </p>
+              <h2 className="text-3xl font-bold text-navy tracking-tight">
+                Frequently asked
+              </h2>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection>
-            <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
+            <div className="bg-white rounded-2xl border border-ice-dark p-6 sm:p-8">
               <FaqItem
                 question="Why is membership application-based?"
-                answer="We believe the value of a professional community comes from the quality of its members. By reviewing every application, we ensure that conversations stay focused, relevant, and genuinely useful for practitioners. This isn't about exclusion—it's about making sure your time here is well spent."
+                answer="We believe the value of a professional community comes from the quality of its members. By reviewing every application, we ensure that conversations stay focused, relevant, and genuinely useful for practitioners."
               />
               <FaqItem
-                question="What if my application is not accepted as a Professional member?"
-                answer="We'll let you know why and often suggest the Student & Early-Career branch as a starting point. Many of our strongest future Professional members will come from this track. It's not a rejection—it's a 'not yet.'"
+                question="What if my application is not accepted?"
+                answer="We'll let you know why and often suggest the Student & Early-Career branch as a starting point. Many of our strongest future Professional members will come from this track. It's not a rejection\u2014it's a 'not yet.'"
               />
               <FaqItem
                 question="Can I re-apply later?"
-                answer="Yes. We encourage re-applications after 6 months or once you've gained additional payments experience. We keep your original application on file to track your growth."
+                answer="Yes. We encourage re-applications after 6 months or once you've gained additional payments experience. We keep your original application on file."
               />
               <FaqItem
-                question="Can I be in the Student branch and then move up?"
+                question="Can I move from Student to Professional?"
                 answer="That's exactly how we designed it. Once you've built 2+ years of payments experience, you can apply for Professional membership. We'll take your Student branch participation into account."
               />
               <FaqItem
-                question="Is there a cap on how many Professional members you accept?"
-                answer="We don't have a hard cap, but we do pace growth intentionally. We'd rather have 200 highly engaged members than 2,000 silent ones. Quality over quantity, always."
+                question="Is there a cap on Professional members?"
+                answer="We don't have a hard cap, but we pace growth intentionally. We'd rather have 200 highly engaged members than 2,000 silent ones. Quality over quantity, always."
               />
             </div>
           </AnimatedSection>

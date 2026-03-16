@@ -20,32 +20,82 @@
   --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Refined scrollbar ── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-ice);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-slate-light);
-  border-radius: 4px;
+  border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-slate);
 }
 
-/* Application modal overlay */
+/* ── Selection ── */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* ── Modal overlay ── */
 .modal-overlay {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+}
+
+/* ── Subtle grain texture for hero sections ── */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Divider line with gold accent ── */
+.section-divider {
+  position: relative;
+}
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 99px;
+}
+
+/* ── Smooth focus styles for forms ── */
+input:focus,
+select:focus,
+textarea:focus {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ── Gradient text utility ── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

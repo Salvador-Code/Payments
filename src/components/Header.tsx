@@ -3,17 +3,25 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -24,42 +32,61 @@ export default function Header() {
     { label: "Blog", href: "/blog" },
   ];
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 shadow-lg backdrop-blur-sm py-2"
-          : "bg-white py-4"
+          ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.05)] py-2.5"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
           <Image
             src="/logo.svg"
             alt="NPI Logo"
-            width={40}
-            height={40}
-            className="w-10 h-10"
+            width={36}
+            height={36}
+            className="w-9 h-9"
             priority
           />
           <div className="flex flex-col">
-            <span className="text-navy font-bold text-xl tracking-tight leading-none">
+            <span
+              className={`font-bold text-lg tracking-tight leading-none transition-colors duration-300 ${
+                scrolled ? "text-navy" : "text-white"
+              }`}
+            >
               NPI
             </span>
-            <span className="text-slate text-[10px] tracking-widest uppercase leading-none mt-0.5 hidden sm:block">
+            <span
+              className={`text-[9px] tracking-[0.2em] uppercase leading-none mt-0.5 hidden sm:block transition-colors duration-300 ${
+                scrolled ? "text-slate" : "text-white/50"
+              }`}
+            >
               National Payments Institute
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-navy-lighter hover:text-gold-dark transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all hover:after:w-full"
+              className={`text-[13px] font-medium px-3.5 py-2 rounded-lg transition-all duration-200 ${
+                isActive(item.href)
+                  ? scrolled
+                    ? "text-navy bg-ice"
+                    : "text-white bg-white/10"
+                  : scrolled
+                    ? "text-slate hover:text-navy hover:bg-ice/70"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
+              }`}
             >
               {item.label}
             </Link>
@@ -67,76 +94,99 @@ export default function Header() {
         </nav>
 
         {/* Desktop Right */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             href="/contact"
-            className="text-sm text-slate hover:text-navy transition-colors"
+            className={`text-[13px] font-medium transition-colors duration-300 ${
+              scrolled
+                ? "text-slate hover:text-navy"
+                : "text-white/60 hover:text-white"
+            }`}
           >
             Contact
           </Link>
           <Link
             href="/membership"
-            className="relative group inline-flex items-center gap-2 bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-navy-light transition-all duration-200 shadow-md hover:shadow-lg"
+            className="inline-flex items-center gap-2 bg-gold text-navy text-[13px] font-semibold px-5 py-2.5 rounded-lg hover:bg-gold-light transition-all duration-200 shadow-sm hover:shadow-md"
           >
-            Apply for Membership
-            <span className="absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap bg-navy text-white text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-              We review every application to keep the community high-signal.
-            </span>
+            Apply Now
+            <ArrowRight size={14} />
           </Link>
         </div>
 
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-navy"
+          className={`lg:hidden p-2 rounded-lg transition-colors ${
+            scrolled ? "text-navy" : "text-white"
+          }`}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-0 bg-white z-40 flex flex-col">
-          <div className="px-6 py-4 flex items-center justify-between border-b border-ice-dark">
-            <Link href="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
-              <Image src="/logo.svg" alt="NPI Logo" width={40} height={40} className="w-10 h-10" />
-              <span className="text-navy font-bold text-xl">NPI</span>
-            </Link>
-            <button onClick={() => setMobileOpen(false)} className="p-2 text-navy">
-              <X size={24} />
-            </button>
-          </div>
-          <nav className="flex flex-col px-6 py-8 gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-lg font-medium text-navy py-3 border-b border-ice hover:text-gold-dark transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed inset-0 top-0 bg-white z-40 flex flex-col"
+          >
+            <div className="px-6 py-4 flex items-center justify-between border-b border-ice">
+              <Link href="/" className="flex items-center gap-2.5">
+                <Image
+                  src="/logo.svg"
+                  alt="NPI Logo"
+                  width={36}
+                  height={36}
+                  className="w-9 h-9"
+                />
+                <span className="text-navy font-bold text-lg">NPI</span>
               </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="text-lg font-medium text-navy py-3 border-b border-ice hover:text-gold-dark transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="px-6 mt-auto pb-8">
-            <Link
-              href="/membership"
-              className="block w-full text-center bg-navy text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-navy-light transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              Apply for Membership
-            </Link>
-          </div>
-        </div>
-      )}
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="p-2 text-navy rounded-lg hover:bg-ice transition-colors"
+              >
+                <X size={22} />
+              </button>
+            </div>
+            <nav className="flex flex-col px-6 py-6 gap-0.5">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-base font-medium py-3.5 px-4 rounded-xl transition-colors ${
+                    isActive(item.href)
+                      ? "text-navy bg-ice"
+                      : "text-slate hover:text-navy hover:bg-ice/50"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                className="text-base font-medium text-slate py-3.5 px-4 rounded-xl hover:text-navy hover:bg-ice/50 transition-colors"
+              >
+                Contact
+              </Link>
+            </nav>
+            <div className="px-6 mt-auto pb-8">
+              <Link
+                href="/membership"
+                className="flex items-center justify-center gap-2 w-full bg-gold text-navy font-semibold px-6 py-3.5 rounded-xl hover:bg-gold-light transition-colors"
+              >
+                Apply for Membership
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

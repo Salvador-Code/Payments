@@ -81,11 +81,7 @@ const nationalRankings = [
     program: "FinTech & Digital Innovation",
     score: 90,
     change: "same",
-    highlights: [
-      "Executive education",
-      "Research centers",
-      "Alumni network",
-    ],
+    highlights: ["Executive education", "Research centers", "Alumni network"],
     featured: false,
   },
   {
@@ -151,11 +147,7 @@ const nationalRankings = [
     program: "FinTech & Blockchain",
     score: 84,
     change: "same",
-    highlights: [
-      "Bay Area ecosystem",
-      "Open innovation",
-      "Diverse cohorts",
-    ],
+    highlights: ["Bay Area ecosystem", "Open innovation", "Diverse cohorts"],
     featured: false,
   },
 ];
@@ -165,7 +157,7 @@ const globalRankings = [
     rank: 1,
     name: "Kennesaw State University",
     country: "United States",
-    flag: "🇺🇸",
+    flag: "\ud83c\uddfa\ud83c\uddf8",
     score: 98,
     change: "up",
     featured: true,
@@ -174,7 +166,7 @@ const globalRankings = [
     rank: 2,
     name: "National University of Singapore",
     country: "Singapore",
-    flag: "🇸🇬",
+    flag: "\ud83c\uddf8\ud83c\uddec",
     score: 95,
     change: "same",
     featured: false,
@@ -183,7 +175,7 @@ const globalRankings = [
     rank: 3,
     name: "Imperial College London",
     country: "United Kingdom",
-    flag: "🇬🇧",
+    flag: "\ud83c\uddec\ud83c\udde7",
     score: 94,
     change: "up",
     featured: false,
@@ -192,7 +184,7 @@ const globalRankings = [
     rank: 4,
     name: "Georgia Institute of Technology",
     country: "United States",
-    flag: "🇺🇸",
+    flag: "\ud83c\uddfa\ud83c\uddf8",
     score: 93,
     change: "same",
     featured: false,
@@ -201,7 +193,7 @@ const globalRankings = [
     rank: 5,
     name: "ETH Zurich",
     country: "Switzerland",
-    flag: "🇨🇭",
+    flag: "\ud83c\udde8\ud83c\udded",
     score: 92,
     change: "down",
     featured: false,
@@ -210,7 +202,7 @@ const globalRankings = [
     rank: 6,
     name: "MIT Sloan School of Management",
     country: "United States",
-    flag: "🇺🇸",
+    flag: "\ud83c\uddfa\ud83c\uddf8",
     score: 91,
     change: "down",
     featured: false,
@@ -219,16 +211,16 @@ const globalRankings = [
     rank: 7,
     name: "Hong Kong University of Science and Technology",
     country: "Hong Kong",
-    flag: "🇭🇰",
+    flag: "\ud83c\udded\ud83c\uddf0",
     score: 90,
     change: "up",
     featured: false,
   },
   {
     rank: 8,
-    name: "University of Oxford (Saïd)",
+    name: "University of Oxford (Sa\u00efd)",
     country: "United Kingdom",
-    flag: "🇬🇧",
+    flag: "\ud83c\uddec\ud83c\udde7",
     score: 89,
     change: "same",
     featured: false,
@@ -237,7 +229,7 @@ const globalRankings = [
     rank: 9,
     name: "NYU Stern School of Business",
     country: "United States",
-    flag: "🇺🇸",
+    flag: "\ud83c\uddfa\ud83c\uddf8",
     score: 88,
     change: "up",
     featured: false,
@@ -246,7 +238,7 @@ const globalRankings = [
     rank: 10,
     name: "Tsinghua University",
     country: "China",
-    flag: "🇨🇳",
+    flag: "\ud83c\udde8\ud83c\uddf3",
     score: 87,
     change: "same",
     featured: false,
@@ -265,24 +257,26 @@ export default function RankingsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy via-navy-light to-navy-lighter py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative bg-navy py-32 overflow-hidden grain">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
+              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-6">
                 <Trophy size={14} className="text-gold" />
                 <span className="text-gold text-xs font-semibold tracking-wider uppercase">
                   2026 Rankings
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
                 FinTech Program Rankings
               </h1>
-              <p className="text-lg text-white/70 leading-relaxed">
-                Our annual ranking of the top FinTech programs across the
-                nation and around the globe. Evaluated on curriculum
-                strength, industry partnerships, graduate outcomes, research
-                impact, and innovation.
+              <p className="text-lg text-white/40 leading-relaxed max-w-xl">
+                Our annual ranking of the top FinTech programs nationally and
+                globally. Evaluated on curriculum, industry partnerships,
+                outcomes, and innovation.
               </p>
             </div>
           </AnimatedSection>
@@ -290,7 +284,7 @@ export default function RankingsPage() {
       </section>
 
       {/* Methodology */}
-      <section className="py-16 bg-white border-b border-ice-dark">
+      <section className="py-14 bg-white border-b border-ice">
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="grid sm:grid-cols-4 gap-6">
@@ -317,8 +311,8 @@ export default function RankingsPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <item.icon size={24} className="text-gold-dark" />
+                  <div className="w-11 h-11 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <item.icon size={20} className="text-gold-dark" />
                   </div>
                   <h4 className="text-sm font-semibold text-navy mb-1">
                     {item.label}
@@ -332,12 +326,12 @@ export default function RankingsPage() {
       </section>
 
       {/* National Rankings */}
-      <section className="py-20 bg-ice">
+      <section className="py-20 bg-ice/50">
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-2">
-              <Flag size={24} className="text-gold-dark" />
-              <h2 className="text-3xl font-bold text-navy">
+              <Flag size={22} className="text-gold-dark" />
+              <h2 className="text-3xl font-bold text-navy tracking-tight">
                 National Rankings
               </h2>
             </div>
@@ -346,20 +340,19 @@ export default function RankingsPage() {
             </p>
           </AnimatedSection>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {nationalRankings.map((school, i) => (
-              <AnimatedSection key={school.rank} delay={i * 0.05}>
+              <AnimatedSection key={school.rank} delay={i * 0.04}>
                 <div
                   className={`rounded-xl p-5 sm:p-6 transition-all ${
                     school.featured
-                      ? "bg-navy text-white shadow-xl ring-2 ring-gold/30"
+                      ? "bg-navy text-white shadow-xl ring-1 ring-gold/20"
                       : "bg-white border border-ice-dark hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-start gap-4 sm:gap-6">
-                    {/* Rank */}
                     <div
-                      className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg ${
+                      className={`shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base ${
                         school.featured
                           ? "bg-gold text-navy"
                           : "bg-ice text-navy"
@@ -368,11 +361,10 @@ export default function RankingsPage() {
                       #{school.rank}
                     </div>
 
-                    {/* Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <h3
-                          className={`text-lg font-bold ${
+                          className={`text-base font-bold ${
                             school.featured ? "text-white" : "text-navy"
                           }`}
                         >
@@ -386,33 +378,32 @@ export default function RankingsPage() {
                       </div>
                       <div className="flex items-center gap-3 mt-1">
                         <span
-                          className={`text-sm ${
-                            school.featured ? "text-white/60" : "text-slate"
+                          className={`text-xs ${
+                            school.featured ? "text-white/40" : "text-slate"
                           }`}
                         >
                           <MapPin
-                            size={12}
+                            size={11}
                             className="inline mr-1 -mt-0.5"
                           />
                           {school.location}
                         </span>
                         <span
-                          className={`text-sm ${
-                            school.featured ? "text-white/60" : "text-slate"
+                          className={`text-xs ${
+                            school.featured ? "text-white/40" : "text-slate"
                           }`}
                         >
                           {school.program}
                         </span>
                       </div>
 
-                      {/* Highlights */}
-                      <div className="flex flex-wrap gap-2 mt-3">
+                      <div className="flex flex-wrap gap-1.5 mt-3">
                         {school.highlights.map((h, j) => (
                           <span
                             key={j}
-                            className={`text-xs px-2.5 py-1 rounded-full ${
+                            className={`text-[11px] px-2.5 py-0.5 rounded-full ${
                               school.featured
-                                ? "bg-white/10 text-white/80"
+                                ? "bg-white/8 text-white/60"
                                 : "bg-ice text-slate"
                             }`}
                           >
@@ -422,7 +413,6 @@ export default function RankingsPage() {
                       </div>
                     </div>
 
-                    {/* Score + Change */}
                     <div className="shrink-0 text-right">
                       <div
                         className={`text-2xl font-bold ${
@@ -434,9 +424,9 @@ export default function RankingsPage() {
                       <div className="flex items-center justify-end gap-1 mt-1">
                         <ChangeIndicator change={school.change} />
                         <span
-                          className={`text-xs ${
+                          className={`text-[10px] ${
                             school.featured
-                              ? "text-white/50"
+                              ? "text-white/30"
                               : "text-slate-light"
                           }`}
                         >
@@ -456,25 +446,24 @@ export default function RankingsPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
-            <div className="bg-gradient-to-br from-navy via-navy-light to-navy-lighter rounded-2xl p-8 sm:p-12 text-white">
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="bg-navy rounded-2xl p-8 sm:p-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full -translate-y-1/3 translate-x-1/3" />
+              <div className="relative grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-1.5 mb-4">
+                  <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
                     <Award size={14} className="text-gold" />
                     <span className="text-gold text-xs font-semibold tracking-wider uppercase">
                       #1 Ranked Program
                     </span>
                   </div>
-                  <h2 className="text-3xl font-bold mb-4">
+                  <h2 className="text-3xl font-bold text-white tracking-tight mb-4">
                     Kennesaw State University
                   </h2>
-                  <p className="text-white/70 leading-relaxed mb-6">
-                    KSU&apos;s FinTech program has earned the top spot in both
-                    our national and global rankings for 2026. With an
-                    industry-aligned curriculum, deep employer partnerships
-                    in Atlanta&apos;s thriving payments corridor, and a
-                    commitment to producing job-ready graduates, KSU sets the
-                    standard for FinTech education.
+                  <p className="text-white/40 leading-relaxed mb-6">
+                    KSU&apos;s FinTech program earned the top spot in both
+                    national and global rankings for 2026. Industry-aligned
+                    curriculum, deep employer partnerships in Atlanta&apos;s
+                    payments corridor, and job-ready graduates.
                   </p>
                   <div className="grid grid-cols-3 gap-4">
                     {[
@@ -486,14 +475,14 @@ export default function RankingsPage() {
                         <div className="text-2xl font-bold text-gold">
                           {stat.value}
                         </div>
-                        <div className="text-xs text-white/50 mt-0.5">
+                        <div className="text-xs text-white/30 mt-0.5">
                           {stat.label}
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {[
                     {
                       title: "Industry-Leading Curriculum",
@@ -501,21 +490,21 @@ export default function RankingsPage() {
                     },
                     {
                       title: "NPI Academic Partner",
-                      desc: "Official academic partner of the National Payments Institute, giving students direct access to industry professionals.",
+                      desc: "Official academic partner of NPI, giving students direct access to industry professionals.",
                     },
                     {
                       title: "Payments Corridor Advantage",
-                      desc: "Located in the heart of Atlanta's payments ecosystem, home to 70% of all U.S. payment transactions.",
+                      desc: "Located in the heart of Atlanta\u2019s payments ecosystem, home to 70% of all U.S. payment transactions.",
                     },
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="bg-white/5 border border-white/10 rounded-xl p-4"
+                      className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4"
                     >
                       <h4 className="text-sm font-semibold text-gold mb-1">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-white/60">{item.desc}</p>
+                      <p className="text-xs text-white/40">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -526,24 +515,23 @@ export default function RankingsPage() {
       </section>
 
       {/* Global Rankings */}
-      <section className="py-20 bg-ice">
+      <section className="py-20 bg-ice/50">
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-2">
-              <Globe size={24} className="text-gold-dark" />
-              <h2 className="text-3xl font-bold text-navy">
+              <Globe size={22} className="text-gold-dark" />
+              <h2 className="text-3xl font-bold text-navy tracking-tight">
                 Global Rankings
               </h2>
             </div>
             <p className="text-slate mb-10">
-              The world&apos;s top FinTech programs across all continents for
-              2026.
+              The world&apos;s top FinTech programs for 2026.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="grid grid-cols-[60px_1fr_1fr_80px_60px] sm:grid-cols-[70px_1fr_1fr_100px_70px] gap-2 px-5 py-3 bg-navy text-white text-xs font-semibold uppercase tracking-wider">
+            <div className="bg-white rounded-2xl border border-ice-dark overflow-hidden">
+              <div className="grid grid-cols-[60px_1fr_1fr_80px_60px] sm:grid-cols-[70px_1fr_1fr_100px_70px] gap-2 px-5 py-3 bg-navy text-white text-[11px] font-medium uppercase tracking-wider">
                 <span>Rank</span>
                 <span>Institution</span>
                 <span>Country</span>
@@ -553,12 +541,12 @@ export default function RankingsPage() {
               {globalRankings.map((school) => (
                 <div
                   key={school.rank}
-                  className={`grid grid-cols-[60px_1fr_1fr_80px_60px] sm:grid-cols-[70px_1fr_1fr_100px_70px] gap-2 px-5 py-4 items-center border-b border-ice last:border-b-0 ${
-                    school.featured ? "bg-gold/5" : ""
+                  className={`grid grid-cols-[60px_1fr_1fr_80px_60px] sm:grid-cols-[70px_1fr_1fr_100px_70px] gap-2 px-5 py-4 items-center border-b border-ice last:border-b-0 transition-colors hover:bg-ice/30 ${
+                    school.featured ? "bg-gold/[0.03]" : ""
                   }`}
                 >
                   <span
-                    className={`font-bold ${
+                    className={`font-bold text-sm ${
                       school.featured ? "text-gold-dark" : "text-navy"
                     }`}
                   >
@@ -568,7 +556,7 @@ export default function RankingsPage() {
                     {school.name}
                     {school.featured && (
                       <Trophy
-                        size={12}
+                        size={11}
                         className="text-gold-dark shrink-0"
                       />
                     )}
@@ -597,8 +585,11 @@ export default function RankingsPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-navy mb-4">
-              Join the #1 Ranked FinTech Network
+            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              Join the Network
+            </p>
+            <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
+              Join the #1 ranked FinTech network
             </h2>
             <p className="text-slate mb-8 max-w-xl mx-auto">
               Whether you&apos;re a student at a top-ranked program or an
@@ -608,13 +599,13 @@ export default function RankingsPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/membership#professional"
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-lg hover:bg-gold-light transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
               >
                 Apply as Professional <ArrowRight size={16} />
               </Link>
               <Link
                 href="/membership#student"
-                className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-7 py-3.5 rounded-lg hover:bg-navy hover:text-white transition-all"
+                className="inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-navy hover:text-white transition-all"
               >
                 Apply as Student
               </Link>

@@ -2,12 +2,18 @@
 
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
-import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Tag, ArrowRight } from "lucide-react";
 import { useParams } from "next/navigation";
 
 const postsData: Record<
   string,
-  { title: string; date: string; readTime: string; category: string; content: string[] }
+  {
+    title: string;
+    date: string;
+    readTime: string;
+    category: string;
+    content: string[];
+  }
 > = {
   "why-we-built-npi": {
     title: "Why We Built NPI: A Letter from the Founders",
@@ -74,10 +80,13 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <section className="py-24 text-center">
+      <section className="py-32 text-center">
         <h1 className="text-2xl font-bold text-navy mb-4">Post Not Found</h1>
-        <Link href="/blog" className="text-gold-dark hover:text-navy font-medium">
-          &larr; Back to Blog
+        <Link
+          href="/blog"
+          className="text-gold-dark hover:text-navy font-medium inline-flex items-center gap-1"
+        >
+          <ArrowLeft size={14} /> Back to Blog
         </Link>
       </section>
     );
@@ -86,12 +95,15 @@ export default function BlogPostPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-gradient-to-br from-navy via-navy-light to-navy-lighter py-24">
-        <div className="mx-auto max-w-3xl px-6">
+      <section className="relative bg-navy py-32 overflow-hidden grain">
+        <div className="absolute inset-0">
+          <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-gold/5 blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
           <AnimatedSection>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-white/50 hover:text-gold transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-sm text-white/30 hover:text-gold transition-colors mb-8"
             >
               <ArrowLeft size={14} /> Back to Blog
             </Link>
@@ -99,14 +111,16 @@ export default function BlogPostPage() {
               <span className="inline-flex items-center gap-1 text-xs font-medium text-navy bg-gold px-2.5 py-1 rounded-full">
                 <Tag size={10} /> {post.category}
               </span>
-              <span className="inline-flex items-center gap-1 text-xs text-white/50">
-                <Calendar size={10} /> {post.date}
+              <span className="text-xs text-white/30">
+                <Calendar size={10} className="inline mr-1" />
+                {post.date}
               </span>
-              <span className="inline-flex items-center gap-1 text-xs text-white/50">
-                <Clock size={10} /> {post.readTime}
+              <span className="text-xs text-white/30">
+                <Clock size={10} className="inline mr-1" />
+                {post.readTime}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight">
               {post.title}
             </h1>
           </AnimatedSection>
@@ -119,27 +133,33 @@ export default function BlogPostPage() {
           <AnimatedSection>
             <article className="space-y-6">
               {post.content.map((paragraph, i) => (
-                <p key={i} className="text-slate leading-relaxed">
+                <p
+                  key={i}
+                  className={`leading-relaxed ${
+                    i === 0
+                      ? "text-navy text-lg"
+                      : "text-slate"
+                  }`}
+                >
                   {paragraph}
                 </p>
               ))}
             </article>
 
-            <div className="mt-12 pt-8 border-t border-ice-dark">
-              <div className="bg-ice rounded-2xl p-8 text-center">
+            <div className="mt-14 pt-8 border-t border-ice">
+              <div className="bg-ice/50 border border-ice-dark rounded-2xl p-8 text-center">
                 <h3 className="text-xl font-bold text-navy mb-2">
                   Want more insights like this?
                 </h3>
                 <p className="text-sm text-slate mb-6">
                   NPI members get access to in-depth discussions, closed-door
-                  roundtables, and a community of practitioners who live this
-                  every day.
+                  roundtables, and a community of practitioners.
                 </p>
                 <Link
                   href="/membership"
-                  className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-lg hover:bg-navy-light transition-colors"
+                  className="inline-flex items-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-xl hover:bg-navy-light transition-colors"
                 >
-                  Apply for Membership <ArrowLeft size={14} className="rotate-180" />
+                  Apply for Membership <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
