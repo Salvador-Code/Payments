@@ -94,10 +94,10 @@ export default function HomePage() {
             <AnimatedSection delay={0.4} variant="fade">
               <div className="flex flex-wrap gap-x-8 gap-y-3">
                 {[
-                  { icon: Award, text: "Founded by Visa product leadership" },
+                  { icon: Award, text: "Co-founded by Visa\u2019s Salvador Santos" },
                   {
                     icon: GraduationCap,
-                    text: "KSU FinTech academic partner",
+                    text: "Co-founded by KSU\u2019s Robert Velarde",
                   },
                   { icon: Globe, text: "Rooted in Atlanta" },
                 ].map((item, i) => (

@@ -15,6 +15,7 @@ import {
   Scale,
   Medal,
   Handshake,
+  Linkedin,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -167,59 +168,140 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founding Story */}
+      {/* Meet the Founders */}
       <section className="py-24 bg-white">
-        <div className="mx-auto max-w-4xl px-6">
+        <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="text-center mb-14">
               <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
-                Origins
+                Leadership
               </p>
-              <h2 className="text-3xl font-bold text-navy tracking-tight">
-                Where we come from
+              <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
+                Meet the founders
               </h2>
+              <p className="text-slate max-w-2xl mx-auto">
+                NPI was founded by practitioners who saw the gap between existing
+                industry groups and what payments professionals actually need.
+              </p>
             </div>
           </AnimatedSection>
 
-          <div className="space-y-6">
+          <div className="grid lg:grid-cols-2 gap-6">
+            <AnimatedSection>
+              <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-gold font-bold text-xl">
+                    SS
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy">
+                      Salvador Santos
+                    </h3>
+                    <p className="text-sm text-gold-dark font-medium">
+                      Co-Founder
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate text-sm leading-relaxed mb-4">
+                  Senior Payments &amp; Product Leader at Visa, where he leads
+                  B2B product development for acceptance solutions. 10+ years
+                  building fintech and payments products managing $40B+ in
+                  payment volume across 100,000+ merchants.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {[
+                    "Money20/20 Amplify \u201924",
+                    "Hispanic Executive 30 Under 30",
+                    "KSU FinTech Advisor",
+                  ].map((tag, i) => (
+                    <span
+                      key={i}
+                      className="text-[11px] bg-gold/10 text-gold-dark px-2.5 py-1 rounded-full font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-slate text-sm leading-relaxed">
+                  Also founded DisruptivePM, an AI-powered product management
+                  mentorship platform, and serves as Atlanta Chapter Director for
+                  Techqueria, a community of 2,000+ Latino professionals in tech.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 bg-gold rounded-xl flex items-center justify-center text-navy font-bold text-xl">
+                    RV
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy">
+                      Robert Velarde
+                    </h3>
+                    <p className="text-sm text-gold-dark font-medium">
+                      Co-Founder
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate text-sm leading-relaxed mb-4">
+                  Operations &amp; Partnerships Executive at Kennesaw State
+                  University, leading strategic partnerships that fuel research,
+                  workforce development, and innovation within KSU&apos;s Digital
+                  Financial Technologies Program.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {[
+                    "U.S. Military Veteran",
+                    "TS Eligible",
+                    "$20B+ Budget Oversight",
+                  ].map((tag, i) => (
+                    <span
+                      key={i}
+                      className="text-[11px] bg-gold/10 text-gold-dark px-2.5 py-1 rounded-full font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-slate text-sm leading-relaxed">
+                  Over a decade of experience spanning higher education, federal
+                  contracting, and management consulting. Co-founder of CMSV
+                  Consulting, advising public and private clients on data-driven
+                  decision-making and operational excellence. Previously managed
+                  $20B+ defense and aerospace program budgets.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Founding pillars */}
+          <div className="mt-12 grid sm:grid-cols-3 gap-4">
             {[
               {
                 icon: Award,
-                iconBg: "bg-navy",
-                iconColor: "text-gold",
-                title: "Founded by Visa Product Leadership",
-                desc: "NPI was founded by payments professionals with hands-on experience building products at scale. Our founding team includes product leaders from Visa and other top-tier payments organizations.",
+                title: "Visa Product Leadership",
+                desc: "Built and shipped payments products used by millions at enterprise scale.",
               },
               {
                 icon: GraduationCap,
-                iconBg: "bg-gold",
-                iconColor: "text-navy",
-                title: "Academic Backing from KSU FinTech",
-                desc: "Our partnership with Kennesaw State University\u2019s FinTech program ensures a strong pipeline of student talent and academic rigor backing our educational initiatives.",
+                title: "KSU FinTech Partnership",
+                desc: "Deep ties to Kennesaw State\u2019s #1-ranked FinTech program.",
               },
               {
                 icon: Lightbulb,
-                iconBg: "bg-navy",
-                iconColor: "text-gold",
                 title: "Rooted in Atlanta",
-                desc: "Atlanta is home to some of the largest payments processors and FinTech companies in the world. We\u2019re building NPI from this epicenter, serving the broader U.S. payments ecosystem.",
+                desc: "Building from the epicenter of U.S. payments processing.",
               },
             ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="flex items-start gap-5 bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-xl p-6 transition-all duration-300">
-                  <div
-                    className={`shrink-0 w-10 h-10 ${item.iconBg} rounded-lg flex items-center justify-center`}
-                  >
-                    <item.icon size={20} className={item.iconColor} />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-navy mb-1.5">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <div className="bg-ice/30 border border-ice-dark rounded-xl p-5 text-center">
+                  <item.icon size={20} className="text-gold-dark mx-auto mb-2" />
+                  <h4 className="text-sm font-semibold text-navy mb-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate">{item.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
