@@ -61,7 +61,7 @@ export default function HomePage() {
 
             <AnimatedSection delay={0.2}>
               <p className="text-lg sm:text-xl text-white/50 leading-relaxed mb-4 max-w-xl">
-                NPI is a curated network for practitioners with real payments
+                NEF is a curated network for practitioners with real payments
                 experience&mdash;backed by a dedicated branch for the next
                 generation.
               </p>
@@ -519,14 +519,14 @@ export default function HomePage() {
                 </div>
                 <p className="text-white/40 text-sm leading-relaxed mb-5">
                   Quarterly cohorts for U.S. military veterans covering payments
-                  fundamentals. Small groups (15&ndash;20), taught by NPI
+                  fundamentals. Small groups (15&ndash;20), taught by NEF
                   Professional volunteers.
                 </p>
                 <ul className="space-y-2.5">
                   {[
                     "Free, structured curriculum: rails, networks, settlement, compliance",
                     "Hands-on case studies and real-world scenarios",
-                    "Certificate recognized by NPI member companies",
+                    "Certificate recognized by NEF member companies",
                   ].map((item, i) => (
                     <li
                       key={i}
@@ -621,7 +621,7 @@ export default function HomePage() {
             {[
               {
                 quote:
-                  "What makes NPI different is the bar. Everyone in the room actually does the work day-to-day.",
+                  "What makes NEF different is the bar. Everyone in the room actually does the work day-to-day.",
                 author: "Senior Payments PM",
                 role: "Top-10 U.S. Bank",
               },

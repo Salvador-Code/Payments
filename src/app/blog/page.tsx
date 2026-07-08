@@ -7,7 +7,7 @@ import { Calendar, ArrowRight, Clock, Tag } from "lucide-react";
 const posts = [
   {
     slug: "why-we-built-npi",
-    title: "Why We Built NPI: A Letter from the Founders",
+    title: "Why We Built NEF: A Letter from the Founders",
     excerpt:
       "The payments industry has plenty of conferences and LinkedIn groups. What it doesn\u2019t have is a curated community where practitioners can have real conversations. Here\u2019s why we\u2019re building one.",
     date: "February 1, 2026",

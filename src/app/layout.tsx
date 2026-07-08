@@ -27,7 +27,7 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "NPI - National Payments Institute",
+  title: "NEF - National Excellence of Fintech",
   description:
     "A curated, application-based institute for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.",
   keywords: [
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     "fintech",
     "professional network",
     "payments professionals",
-    "NPI",
-    "national payment institute",
+    "NEF",
+    "national excellence of fintech",
     "membership",
   ],
 };

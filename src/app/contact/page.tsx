@@ -73,7 +73,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Form */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 min-w-0">
               <AnimatedSection>
                 {submitted ? (
                   <div className="bg-ice/50 border border-ice-dark rounded-2xl p-10 text-center">
@@ -165,7 +165,7 @@ export default function ContactPage() {
             </div>
 
             {/* Info */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 min-w-0">
               <AnimatedSection delay={0.15}>
                 <div className="space-y-5">
                   <div className="bg-ice/50 border border-ice-dark rounded-xl p-6">
@@ -176,7 +176,7 @@ export default function ContactPage() {
                       <h4 className="font-semibold text-sm text-navy">Email</h4>
                     </div>
                     <p className="text-sm text-slate">
-                      hello@nationalpaymentinstitute.org
+                      hello@nationalexcellenceoffintech.org
                     </p>
                     <p className="text-xs text-slate-light mt-1">
                       We respond within 2&ndash;3 business days.
@@ -212,7 +212,7 @@ export default function ContactPage() {
                       elevating payments professionals.
                     </p>
                     <p className="text-sm text-gold">
-                      partnerships@nationalpaymentinstitute.org
+                      partnerships@nationalexcellenceoffintech.org
                     </p>
                   </div>
                 </div>

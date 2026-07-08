@@ -48,7 +48,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2.5 group">
           <Image
             src="/logo.svg"
-            alt="NPI Logo"
+            alt="NEF Logo"
             width={36}
             height={36}
             className="w-9 h-9"
@@ -60,14 +60,14 @@ export default function Header() {
                 scrolled ? "text-navy" : "text-white"
               }`}
             >
-              NPI
+              NEF
             </span>
             <span
               className={`text-[9px] tracking-[0.2em] uppercase leading-none mt-0.5 hidden sm:block transition-colors duration-300 ${
                 scrolled ? "text-slate" : "text-white/50"
               }`}
             >
-              National Payments Institute
+              National Excellence of Fintech
             </span>
           </div>
         </Link>
@@ -140,12 +140,12 @@ export default function Header() {
               <Link href="/" className="flex items-center gap-2.5">
                 <Image
                   src="/logo.svg"
-                  alt="NPI Logo"
+                  alt="NEF Logo"
                   width={36}
                   height={36}
                   className="w-9 h-9"
                 />
-                <span className="text-navy font-bold text-lg">NPI</span>
+                <span className="text-navy font-bold text-lg">NEF</span>
               </Link>
               <button
                 onClick={() => setMobileOpen(false)}

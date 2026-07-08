@@ -28,7 +28,7 @@ const nationalRankings = [
     highlights: [
       "Industry-leading curriculum",
       "Strong employer partnerships",
-      "NPI academic partner",
+      "NEF academic partner",
     ],
     featured: true,
   },
@@ -372,7 +372,7 @@ export default function RankingsPage() {
                         </h3>
                         {school.featured && (
                           <span className="text-[10px] font-semibold bg-gold/20 text-gold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                            NPI Partner
+                            NEF Partner
                           </span>
                         )}
                       </div>
@@ -489,8 +489,8 @@ export default function RankingsPage() {
                       desc: "Courses designed with input from Visa, FIS, Global Payments, and other Atlanta-based payments leaders.",
                     },
                     {
-                      title: "NPI Academic Partner",
-                      desc: "Official academic partner of NPI, giving students direct access to industry professionals.",
+                      title: "NEF Academic Partner",
+                      desc: "Official academic partner of NEF, giving students direct access to industry professionals.",
                     },
                     {
                       title: "Payments Corridor Advantage",
@@ -593,7 +593,7 @@ export default function RankingsPage() {
             </h2>
             <p className="text-slate mb-8 max-w-xl mx-auto">
               Whether you&apos;re a student at a top-ranked program or an
-              industry professional, NPI connects you with the payments
+              industry professional, NEF connects you with the payments
               community that matters.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

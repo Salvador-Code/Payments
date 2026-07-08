@@ -51,7 +51,7 @@ const events = [
     priority: "Student members",
     studentSeats: null,
     description:
-      "A hands-on workshop covering the payments value chain, key players, and career paths. Led by NPI Professional members who work at top-10 banks and fintechs.",
+      "A hands-on workshop covering the payments value chain, key players, and career paths. Led by NEF Professional members who work at top-10 banks and fintechs.",
     featured: false,
   },
   {
@@ -64,7 +64,7 @@ const events = [
     priority: "Veterans + Professional members",
     studentSeats: null,
     description:
-      "An intimate dinner pairing veterans from our Payments Cohort program with NPI Professional members. Build real relationships with people who can open doors in payments.",
+      "An intimate dinner pairing veterans from our Payments Cohort program with NEF Professional members. Build real relationships with people who can open doors in payments.",
     featured: false,
   },
   {

@@ -409,7 +409,7 @@ function ApplicationModal({
                 className="mt-1 rounded border-ice-dark text-gold focus:ring-gold"
               />
               <span className="text-sm text-slate">
-                I agree to follow NPI&apos;s community code and confidentiality
+                I agree to follow NEF&apos;s community code and confidentiality
                 guidelines. *
               </span>
             </label>
@@ -544,6 +544,9 @@ export default function MembershipPage() {
           </AnimatedSection>
 
           <AnimatedSection>
+            <p className="sm:hidden text-xs text-slate-light text-center mb-3">
+              Swipe to compare &rarr;
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

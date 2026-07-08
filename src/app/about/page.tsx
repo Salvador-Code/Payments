@@ -33,10 +33,10 @@ export default function AboutPage() {
                 Our Story
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
-                About NPI
+                About NEF
               </h1>
               <p className="text-lg text-white/40 leading-relaxed max-w-xl">
-                The National Payments Institute was founded with a simple
+                National Excellence of Fintech was founded with a simple
                 belief: the payments industry needs a community where experience
                 is valued, conversations are real, and membership means
                 something.
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 are vendor pitches disguised as thought leadership.
               </p>
               <p className="text-slate leading-relaxed">
-                NPI is different by design. We review every application. We cap
+                NEF is different by design. We review every application. We cap
                 our events. We separate Professional and Student tracks so that
                 everyone gets value at their level. And we&apos;re rooted in the
                 real work of payments&mdash;not the buzzwords.
@@ -180,13 +180,13 @@ export default function AboutPage() {
                 Meet the founders
               </h2>
               <p className="text-slate max-w-2xl mx-auto">
-                NPI was founded by practitioners who saw the gap between existing
+                NEF was founded by practitioners who saw the gap between existing
                 industry groups and what payments professionals actually need.
               </p>
             </div>
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6">
             <AnimatedSection>
               <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
                 <div className="flex items-center gap-4 mb-5">
@@ -272,6 +272,24 @@ export default function AboutPage() {
                   decision-making and operational excellence. Previously managed
                   $20B+ defense and aerospace program budgets.
                 </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-gold font-bold text-xl">
+                    BW
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy">
+                      Benjamin Willhite-Mettler
+                    </h3>
+                    <p className="text-sm text-gold-dark font-medium">
+                      Co-Founder
+                    </p>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -392,7 +410,7 @@ export default function AboutPage() {
                 What&apos;s coming next
               </h2>
               <p className="text-slate max-w-xl mx-auto">
-                We&apos;re building NPI in phases. Here&apos;s what&apos;s on
+                We&apos;re building NEF in phases. Here&apos;s what&apos;s on
                 the roadmap.
               </p>
             </div>
