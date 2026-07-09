@@ -495,19 +495,19 @@ export default function MembershipPage() {
       )}
 
       {/* Hero */}
-      <section className="relative bg-navy py-32 overflow-hidden grain">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl -translate-x-1/2" />
+          <div className="absolute top-0 left-1/2 w-[600px] h-[600px] rounded-full bg-gold/10 blur-3xl -translate-x-1/2" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold/70 tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
               Membership
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
               By application, not algorithm
             </h1>
-            <p className="text-lg text-white/40 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-slate max-w-2xl mx-auto mb-10">
               We don&apos;t optimize for maximum member count. We optimize for
               the right mix of practitioners and serious future practitioners.
             </p>
@@ -520,7 +520,7 @@ export default function MembershipPage() {
               </button>
               <button
                 onClick={() => setModalType("student")}
-                className="inline-flex items-center gap-2 border border-white/15 text-white/80 font-medium px-7 py-3.5 rounded-xl hover:bg-white/5 hover:border-white/25 transition-all"
+                className="inline-flex items-center gap-2 border-2 border-navy text-navy font-medium px-7 py-3.5 rounded-xl hover:bg-navy hover:text-white transition-all"
               >
                 Apply as Student
               </button>

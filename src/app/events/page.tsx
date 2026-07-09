@@ -86,23 +86,23 @@ export default function EventsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy py-32 overflow-hidden grain">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
+          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold/70 tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
               Calendar
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
               Intimate, curated events
             </h1>
-            <p className="text-lg text-white/40 max-w-2xl mx-auto mb-3">
+            <p className="text-lg text-slate max-w-2xl mx-auto mb-3">
               Small, focused gatherings where every seat matters. Real
               conversations with people who actually work in payments.
             </p>
-            <p className="text-sm text-white/25 max-w-xl mx-auto">
+            <p className="text-sm text-slate-light max-w-xl mx-auto">
               Professional members receive first access. Remaining seats open
               for Student members and select non-members.
             </p>

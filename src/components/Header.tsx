@@ -37,10 +37,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.05)] py-2.5"
-          : "bg-transparent py-5"
+          ? "shadow-[0_1px_0_0_rgba(15,23,41,0.06)] py-2.5"
+          : "py-5 border-b border-ice-dark/60"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
@@ -55,18 +55,10 @@ export default function Header() {
             priority
           />
           <div className="flex flex-col">
-            <span
-              className={`font-bold text-lg tracking-tight leading-none transition-colors duration-300 ${
-                scrolled ? "text-navy" : "text-white"
-              }`}
-            >
+            <span className="font-bold text-lg tracking-tight leading-none text-navy">
               NEF
             </span>
-            <span
-              className={`text-[9px] tracking-[0.2em] uppercase leading-none mt-0.5 hidden sm:block transition-colors duration-300 ${
-                scrolled ? "text-slate" : "text-white/50"
-              }`}
-            >
+            <span className="text-[9px] tracking-[0.2em] uppercase leading-none mt-0.5 hidden sm:block text-slate-light">
               National Excellence of Fintech
             </span>
           </div>
@@ -80,12 +72,8 @@ export default function Header() {
               href={item.href}
               className={`text-[13px] font-medium px-3.5 py-2 rounded-lg transition-all duration-200 ${
                 isActive(item.href)
-                  ? scrolled
-                    ? "text-navy bg-ice"
-                    : "text-white bg-white/10"
-                  : scrolled
-                    ? "text-slate hover:text-navy hover:bg-ice/70"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
+                  ? "text-navy bg-ice"
+                  : "text-slate hover:text-navy hover:bg-ice/70"
               }`}
             >
               {item.label}
@@ -97,11 +85,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             href="/contact"
-            className={`text-[13px] font-medium transition-colors duration-300 ${
-              scrolled
-                ? "text-slate hover:text-navy"
-                : "text-white/60 hover:text-white"
-            }`}
+            className="text-[13px] font-medium text-slate hover:text-navy transition-colors duration-200"
           >
             Contact
           </Link>
@@ -117,9 +101,7 @@ export default function Header() {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
-            scrolled ? "text-navy" : "text-white"
-          }`}
+          className="lg:hidden p-2 rounded-lg text-navy transition-colors"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}

@@ -257,23 +257,23 @@ export default function RankingsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy py-32 overflow-hidden grain">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gold/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-6">
-                <Trophy size={14} className="text-gold" />
-                <span className="text-gold text-xs font-semibold tracking-wider uppercase">
+                <Trophy size={14} className="text-gold-dark" />
+                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
                   2026 Rankings
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
                 FinTech Program Rankings
               </h1>
-              <p className="text-lg text-white/40 leading-relaxed max-w-xl">
+              <p className="text-lg text-slate leading-relaxed max-w-xl">
                 Our annual ranking of the top FinTech programs nationally and
                 globally. Evaluated on curriculum, industry partnerships,
                 outcomes, and innovation.

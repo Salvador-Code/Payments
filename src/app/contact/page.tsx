@@ -48,19 +48,19 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy py-32 overflow-hidden grain">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 right-1/3 w-[400px] h-[400px] rounded-full bg-gold/5 blur-3xl" />
+          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] rounded-full bg-gold/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold/70 tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
               Get in Touch
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
               Contact us
             </h1>
-            <p className="text-lg text-white/40 max-w-2xl">
+            <p className="text-lg text-slate max-w-2xl">
               Questions about membership, events, or partnerships? We&apos;d
               love to hear from you.
             </p>

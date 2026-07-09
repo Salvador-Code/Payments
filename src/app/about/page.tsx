@@ -22,20 +22,20 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy py-32 overflow-hidden grain">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/5 blur-3xl" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold text-gold/70 tracking-[0.2em] uppercase mb-4">
+              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
                 Our Story
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight leading-[1.1] mb-6">
                 About NEF
               </h1>
-              <p className="text-lg text-white/40 leading-relaxed max-w-xl">
+              <p className="text-lg text-slate leading-relaxed max-w-xl">
                 National Excellence of Fintech was founded with a simple
                 belief: the payments industry needs a community where experience
                 is valued, conversations are real, and membership means
@@ -186,7 +186,7 @@ export default function AboutPage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-2 gap-6">
             <AnimatedSection>
               <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
                 <div className="flex items-center gap-4 mb-5">
@@ -231,51 +231,6 @@ export default function AboutPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 bg-gold rounded-xl flex items-center justify-center text-navy font-bold text-xl">
-                    RV
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-navy">
-                      Robert Velarde
-                    </h3>
-                    <p className="text-sm text-gold-dark font-medium">
-                      Co-Founder
-                    </p>
-                  </div>
-                </div>
-                <p className="text-slate text-sm leading-relaxed mb-4">
-                  Operations &amp; Partnerships Executive at Kennesaw State
-                  University, leading strategic partnerships that fuel research,
-                  workforce development, and innovation within KSU&apos;s Digital
-                  Financial Technologies Program.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {[
-                    "U.S. Military Veteran",
-                    "TS Eligible",
-                    "$20B+ Budget Oversight",
-                  ].map((tag, i) => (
-                    <span
-                      key={i}
-                      className="text-[11px] bg-gold/10 text-gold-dark px-2.5 py-1 rounded-full font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-slate text-sm leading-relaxed">
-                  Over a decade of experience spanning higher education, federal
-                  contracting, and management consulting. Co-founder of CMSV
-                  Consulting, advising public and private clients on data-driven
-                  decision-making and operational excellence. Previously managed
-                  $20B+ defense and aerospace program budgets.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
               <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-gold font-bold text-xl">
@@ -328,23 +283,23 @@ export default function AboutPage() {
       </section>
 
       {/* Veterans Initiative */}
-      <section id="veterans" className="py-24 bg-navy scroll-mt-24 relative overflow-hidden grain">
+      <section id="veterans" className="py-24 bg-ice/40 scroll-mt-24 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/10 rounded-full blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
-                <Medal size={14} className="text-gold" />
-                <span className="text-gold text-xs font-semibold tracking-wider uppercase">
+                <Medal size={14} className="text-gold-dark" />
+                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
                   Giving Back
                 </span>
               </div>
-              <h2 className="text-3xl font-bold text-white tracking-tight mb-4">
+              <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
                 Our commitment to veterans
               </h2>
-              <p className="text-white/40 max-w-2xl mx-auto">
+              <p className="text-slate max-w-2xl mx-auto">
                 Veterans bring discipline, leadership, and
                 adaptability&mdash;exactly the traits that make great payments
                 professionals.
@@ -354,16 +309,16 @@ export default function AboutPage() {
 
           <div className="space-y-6">
             <AnimatedSection>
-              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-7">
+              <div className="bg-white border border-ice-dark rounded-xl p-7">
                 <div className="flex items-start gap-5">
-                  <div className="shrink-0 w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <Medal size={20} className="text-gold" />
+                  <div className="shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                    <Medal size={20} className="text-gold-dark" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-navy mb-2">
                       Free Veterans Payments Cohorts
                     </h3>
-                    <p className="text-white/40 text-sm leading-relaxed">
+                    <p className="text-slate text-sm leading-relaxed">
                       Each quarter, we run a free, structured cohort for U.S.
                       military veterans and transitioning service members. Small
                       cohorts of 15&ndash;20 veterans ensure real mentorship and
@@ -375,16 +330,16 @@ export default function AboutPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-7">
+              <div className="bg-white border border-ice-dark rounded-xl p-7">
                 <div className="flex items-start gap-5">
-                  <div className="shrink-0 w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <Handshake size={20} className="text-gold" />
+                  <div className="shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                    <Handshake size={20} className="text-gold-dark" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-navy mb-2">
                       Quarterly Veterans Networking Night
                     </h3>
-                    <p className="text-white/40 text-sm leading-relaxed">
+                    <p className="text-slate text-sm leading-relaxed">
                       Dedicated networking dinners where veterans connect
                       face-to-face with payments professionals. No awkward
                       panels&mdash;just intimate dinner where real relationships

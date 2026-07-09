@@ -26,15 +26,16 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero Section ── */}
-      <section className="relative overflow-hidden bg-navy min-h-[100vh] flex items-center grain">
-        {/* Refined background: single gradient orb + grid */}
+      <section className="relative overflow-hidden bg-white min-h-[92vh] flex items-center">
+        {/* Refined background: soft gradient wash + grid */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-b from-gold/8 to-transparent blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-b from-gold/10 to-transparent blur-3xl" />
+          <div className="absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full bg-navy/[0.05] blur-3xl" />
           <div
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 opacity-[0.035]"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)",
+                "linear-gradient(rgba(15,23,41,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,41,0.4) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }}
           />
@@ -43,16 +44,16 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 lg:py-40">
           <div className="max-w-3xl">
             <AnimatedSection variant="fade">
-              <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.08] rounded-full px-4 py-1.5 mb-8 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 bg-white border border-ice-dark rounded-full px-4 py-1.5 mb-8 shadow-sm">
                 <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                <span className="text-white/60 text-xs font-medium tracking-wide">
+                <span className="text-slate text-xs font-medium tracking-wide">
                   Application-Based Membership &middot; Now Accepting
                 </span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-8">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-navy leading-[1.05] tracking-tight mb-8">
                 The payments community
                 <br />
                 that <span className="text-gradient">means something</span>
@@ -60,12 +61,12 @@ export default function HomePage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
-              <p className="text-lg sm:text-xl text-white/50 leading-relaxed mb-4 max-w-xl">
+              <p className="text-lg sm:text-xl text-slate leading-relaxed mb-4 max-w-xl">
                 NEF is a curated network for practitioners with real payments
                 experience&mdash;backed by a dedicated branch for the next
                 generation.
               </p>
-              <p className="text-sm text-white/30 mb-12">
+              <p className="text-sm text-slate-light mb-12">
                 Every application reviewed. Every member vetted. No exceptions.
               </p>
             </AnimatedSection>
@@ -84,7 +85,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/membership#student"
-                  className="inline-flex items-center gap-2 border border-white/15 text-white/80 font-medium px-7 py-4 rounded-xl hover:bg-white/5 hover:border-white/25 transition-all"
+                  className="inline-flex items-center gap-2 border-2 border-navy text-navy font-medium px-7 py-4 rounded-xl hover:bg-navy hover:text-white transition-all"
                 >
                   Apply as Student
                 </Link>
@@ -97,15 +98,15 @@ export default function HomePage() {
                   { icon: Award, text: "Co-founded by Visa\u2019s Salvador Santos" },
                   {
                     icon: GraduationCap,
-                    text: "Co-founded by KSU\u2019s Robert Velarde",
+                    text: "Co-founded by Benjamin Willhite-Mettler",
                   },
                   { icon: Globe, text: "Rooted in Atlanta" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-white/30 text-sm"
+                    className="flex items-center gap-2 text-slate-light text-sm"
                   >
-                    <item.icon size={14} className="text-gold/60" />
+                    <item.icon size={14} className="text-gold-dark" />
                     <span>{item.text}</span>
                   </div>
                 ))}
@@ -113,9 +114,6 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
       </section>
 
       {/* ── Stats Strip ── */}
@@ -477,23 +475,23 @@ export default function HomePage() {
       </section>
 
       {/* ── Veterans Initiative ── */}
-      <section className="py-24 bg-navy relative overflow-hidden grain">
+      <section className="py-24 bg-ice/40 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-6">
-                <Medal size={14} className="text-gold" />
-                <span className="text-gold text-xs font-semibold tracking-wider uppercase">
+                <Medal size={14} className="text-gold-dark" />
+                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
                   Giving Back
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-4">
                 Supporting veterans in payments
               </h2>
-              <p className="text-white/40 max-w-2xl mx-auto">
+              <p className="text-slate max-w-2xl mx-auto">
                 Veterans bring discipline, leadership, and mission-first
                 thinking. We&apos;re committed to opening doors for those who
                 served.
@@ -503,21 +501,21 @@ export default function HomePage() {
 
           <div className="grid lg:grid-cols-2 gap-6">
             <AnimatedSection>
-              <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 h-full backdrop-blur-sm">
+              <div className="bg-white border border-ice-dark rounded-2xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <Medal size={20} className="text-gold" />
+                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                    <Medal size={20} className="text-gold-dark" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-gold/60 tracking-[0.15em] uppercase font-medium">
+                    <span className="text-[10px] text-gold-dark tracking-[0.15em] uppercase font-medium">
                       Free Program
                     </span>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold text-navy">
                       Veterans Payments Cohort
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/40 text-sm leading-relaxed mb-5">
+                <p className="text-slate text-sm leading-relaxed mb-5">
                   Quarterly cohorts for U.S. military veterans covering payments
                   fundamentals. Small groups (15&ndash;20), taught by NEF
                   Professional volunteers.
@@ -530,11 +528,11 @@ export default function HomePage() {
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 text-sm text-white/50"
+                      className="flex items-start gap-2.5 text-sm text-slate"
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold/60 shrink-0 mt-0.5"
+                        className="text-gold-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -544,21 +542,21 @@ export default function HomePage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 h-full backdrop-blur-sm">
+              <div className="bg-white border border-ice-dark rounded-2xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                    <Handshake size={20} className="text-gold" />
+                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                    <Handshake size={20} className="text-gold-dark" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-gold/60 tracking-[0.15em] uppercase font-medium">
+                    <span className="text-[10px] text-gold-dark tracking-[0.15em] uppercase font-medium">
                       Quarterly
                     </span>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold text-navy">
                       Veterans Networking Night
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/40 text-sm leading-relaxed mb-5">
+                <p className="text-slate text-sm leading-relaxed mb-5">
                   Intimate dinners pairing veterans with payments professionals.
                   No awkward keynotes&mdash;just real conversations that open
                   doors.
@@ -571,11 +569,11 @@ export default function HomePage() {
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 text-sm text-white/50"
+                      className="flex items-start gap-2.5 text-sm text-slate"
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold/60 shrink-0 mt-0.5"
+                        className="text-gold-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -594,8 +592,8 @@ export default function HomePage() {
                 { stat: "Quarterly", label: "Networking nights" },
               ].map((item, i) => (
                 <div key={i} className="text-center">
-                  <p className="text-2xl font-bold text-gold">{item.stat}</p>
-                  <p className="text-xs text-white/30 mt-0.5">{item.label}</p>
+                  <p className="text-2xl font-bold text-gold-dark">{item.stat}</p>
+                  <p className="text-xs text-slate-light mt-0.5">{item.label}</p>
                 </div>
               ))}
             </div>

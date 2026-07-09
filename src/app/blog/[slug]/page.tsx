@@ -95,15 +95,15 @@ export default function BlogPostPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative bg-navy py-32 overflow-hidden grain">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-gold/5 blur-3xl" />
+          <div className="absolute top-0 left-1/3 w-[400px] h-[400px] rounded-full bg-gold/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <AnimatedSection>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm text-white/30 hover:text-gold transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-sm text-slate-light hover:text-gold-dark transition-colors mb-8"
             >
               <ArrowLeft size={14} /> Back to Blog
             </Link>
@@ -111,16 +111,16 @@ export default function BlogPostPage() {
               <span className="inline-flex items-center gap-1 text-xs font-medium text-navy bg-gold px-2.5 py-1 rounded-full">
                 <Tag size={10} /> {post.category}
               </span>
-              <span className="text-xs text-white/30">
+              <span className="text-xs text-slate-light">
                 <Calendar size={10} className="inline mr-1" />
                 {post.date}
               </span>
-              <span className="text-xs text-white/30">
+              <span className="text-xs text-slate-light">
                 <Clock size={10} className="inline mr-1" />
                 {post.readTime}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-navy leading-tight tracking-tight">
               {post.title}
             </h1>
           </AnimatedSection>
