@@ -9,16 +9,12 @@ import {
   Calendar,
   ArrowRight,
   CheckCircle,
-  Star,
   Briefcase,
   BookOpen,
   Award,
-  TrendingUp,
   Globe,
-  Zap,
   Medal,
   Handshake,
-  UserCheck,
   ArrowUpRight,
 } from "lucide-react";
 

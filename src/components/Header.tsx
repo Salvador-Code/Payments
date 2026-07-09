@@ -18,11 +18,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Membership", href: "/membership" },
@@ -119,7 +114,11 @@ export default function Header() {
             className="lg:hidden fixed inset-0 top-0 bg-white z-40 flex flex-col"
           >
             <div className="px-6 py-4 flex items-center justify-between border-b border-ice">
-              <Link href="/" className="flex items-center gap-2.5">
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5"
+              >
                 <Image
                   src="/logo.svg"
                   alt="NEF Logo"
@@ -141,6 +140,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setMobileOpen(false)}
                   className={`text-base font-medium py-3.5 px-4 rounded-xl transition-colors ${
                     isActive(item.href)
                       ? "text-navy bg-ice"
@@ -152,6 +152,7 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
+                onClick={() => setMobileOpen(false)}
                 className="text-base font-medium text-slate py-3.5 px-4 rounded-xl hover:text-navy hover:bg-ice/50 transition-colors"
               >
                 Contact
@@ -160,6 +161,7 @@ export default function Header() {
             <div className="px-6 mt-auto pb-8">
               <Link
                 href="/membership"
+                onClick={() => setMobileOpen(false)}
                 className="flex items-center justify-center gap-2 w-full bg-gold text-navy font-semibold px-6 py-3.5 rounded-xl hover:bg-gold-light transition-colors"
               >
                 Apply for Membership

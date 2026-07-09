@@ -34,9 +34,9 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             <div className="flex items-center gap-2.5 mb-4">
               <Image
                 src="/logo.svg"
@@ -66,6 +66,7 @@ export default function Footer() {
                 { label: "Rankings", href: "/rankings" },
                 { label: "About", href: "/about" },
                 { label: "Blog", href: "/blog" },
+                { label: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
@@ -118,35 +119,6 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Coming Soon */}
-          <div>
-            <h4 className="font-medium text-xs uppercase tracking-[0.15em] text-white/30 mb-5">
-              Coming Soon
-            </h4>
-            <ul className="space-y-3">
-              <li className="text-sm text-white/50 flex items-center gap-2">
-                Courses
-                <span className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gold/70">
-                  Soon
-                </span>
-              </li>
-              <li className="text-sm text-white/50 flex items-center gap-2">
-                Certification
-                <span className="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gold/70">
-                  Soon
-                </span>
-              </li>
-            </ul>
-            <div className="mt-6">
-              <Link
-                href="/contact"
-                className="text-sm text-white/50 hover:text-gold transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
           </div>
         </div>
 

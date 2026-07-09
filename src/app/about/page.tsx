@@ -15,7 +15,6 @@ import {
   Scale,
   Medal,
   Handshake,
-  Linkedin,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -231,7 +230,7 @@ export default function AboutPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
-              <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
+              <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-gold font-bold text-xl">
                     BW
@@ -245,6 +244,11 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
+                <p className="text-slate text-sm leading-relaxed">
+                  Co-founded NEF alongside Salvador to build the community
+                  payments professionals actually deserve&mdash;selective,
+                  substantive, and rooted in real practitioner experience.
+                </p>
               </div>
             </AnimatedSection>
           </div>

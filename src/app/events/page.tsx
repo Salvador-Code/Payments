@@ -3,7 +3,6 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import {
-  Calendar,
   MapPin,
   Users,
   Clock,
