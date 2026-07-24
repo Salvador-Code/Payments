@@ -43,18 +43,18 @@ export default function ContactPage() {
   };
 
   const inputClass =
-    "w-full border border-ice-dark rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all placeholder:text-slate-light";
+    "w-full border border-ice-dark rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-all placeholder:text-slate-light";
 
   return (
     <>
       {/* Hero */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute top-0 right-1/3 w-[400px] h-[400px] rounded-full bg-teal/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-4">
               Get in Touch
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
@@ -171,12 +171,12 @@ export default function ContactPage() {
                   <div className="bg-ice/50 border border-ice-dark rounded-xl p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-9 h-9 bg-navy rounded-lg flex items-center justify-center">
-                        <Mail size={16} className="text-gold" />
+                        <Mail size={16} className="text-teal" />
                       </div>
                       <h4 className="font-semibold text-sm text-navy">Email</h4>
                     </div>
                     <p className="text-sm text-slate">
-                      hello@nationalexcellenceoffintech.org
+                      hello@nefti.com
                     </p>
                     <p className="text-xs text-slate-light mt-1">
                       We respond within 2&ndash;3 business days.
@@ -186,7 +186,7 @@ export default function ContactPage() {
                   <div className="bg-ice/50 border border-ice-dark rounded-xl p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-9 h-9 bg-navy rounded-lg flex items-center justify-center">
-                        <MapPin size={16} className="text-gold" />
+                        <MapPin size={16} className="text-teal" />
                       </div>
                       <h4 className="font-semibold text-sm text-navy">
                         Location
@@ -200,8 +200,8 @@ export default function ContactPage() {
 
                   <div className="bg-navy rounded-xl p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-9 h-9 bg-gold/20 rounded-lg flex items-center justify-center">
-                        <Handshake size={16} className="text-gold" />
+                      <div className="w-9 h-9 bg-teal/20 rounded-lg flex items-center justify-center">
+                        <Handshake size={16} className="text-teal" />
                       </div>
                       <h4 className="font-semibold text-sm text-white">
                         Partnerships
@@ -211,8 +211,8 @@ export default function ContactPage() {
                       We partner with organizations that share our commitment to
                       elevating payments professionals.
                     </p>
-                    <p className="text-sm text-gold">
-                      partnerships@nationalexcellenceoffintech.org
+                    <p className="text-sm text-teal">
+                      partnerships@nefti.com
                     </p>
                   </div>
                 </div>

@@ -89,7 +89,7 @@ function ApplicationModal({
   };
 
   const inputClass =
-    "w-full border border-ice-dark rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all placeholder:text-slate-light";
+    "w-full border border-ice-dark rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-all placeholder:text-slate-light";
 
   if (submitted) {
     return (
@@ -130,13 +130,13 @@ function ApplicationModal({
           className={`p-6 rounded-t-2xl ${
             type === "professional"
               ? "bg-navy"
-              : "bg-gradient-to-r from-gold-dark to-gold"
+              : "bg-gradient-to-r from-teal-dark to-teal"
           }`}
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {type === "professional" ? (
-                <Shield size={22} className="text-gold" />
+                <Shield size={22} className="text-teal" />
               ) : (
                 <GraduationCap size={22} className="text-navy" />
               )}
@@ -290,7 +290,7 @@ function ApplicationModal({
                           type="checkbox"
                           name="area"
                           value={area}
-                          className="rounded border-ice-dark text-gold focus:ring-gold"
+                          className="rounded border-ice-dark text-teal focus:ring-teal"
                         />
                         {area}
                       </label>
@@ -406,10 +406,10 @@ function ApplicationModal({
               <input
                 type="checkbox"
                 required
-                className="mt-1 rounded border-ice-dark text-gold focus:ring-gold"
+                className="mt-1 rounded border-ice-dark text-teal focus:ring-teal"
               />
               <span className="text-sm text-slate">
-                I agree to follow NEF&apos;s community code and confidentiality
+                I agree to follow NEFTI&apos;s community code and confidentiality
                 guidelines. *
               </span>
             </label>
@@ -427,7 +427,7 @@ function ApplicationModal({
             className={`w-full flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-xl transition-all ${
               type === "professional"
                 ? "bg-navy text-white hover:bg-navy-light"
-                : "bg-gold text-navy hover:bg-gold-light"
+                : "bg-teal text-white hover:bg-teal-light"
             } disabled:opacity-70`}
           >
             {loading ? (
@@ -461,7 +461,7 @@ function FaqItem({
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-sm font-medium text-navy pr-4 group-hover:text-gold-dark transition-colors">
+        <span className="text-sm font-medium text-navy pr-4 group-hover:text-teal-dark transition-colors">
           {question}
         </span>
         {open ? (
@@ -497,11 +497,11 @@ export default function MembershipPage() {
       {/* Hero */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 w-[600px] h-[600px] rounded-full bg-gold/10 blur-3xl -translate-x-1/2" />
+          <div className="absolute top-0 left-1/2 w-[600px] h-[600px] rounded-full bg-teal/10 blur-3xl -translate-x-1/2" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-4">
               Membership
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
@@ -514,7 +514,7 @@ export default function MembershipPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => setModalType("professional")}
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
+                className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20"
               >
                 Apply as Professional <ArrowRight size={14} />
               </button>
@@ -534,7 +534,7 @@ export default function MembershipPage() {
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Side by Side
               </p>
               <h2 className="text-3xl font-bold text-navy tracking-tight">
@@ -556,15 +556,15 @@ export default function MembershipPage() {
                     </th>
                     <th className="text-left py-4 px-4 border-b-2 border-navy">
                       <div className="flex items-center gap-2">
-                        <Shield size={16} className="text-gold-dark" />
+                        <Shield size={16} className="text-teal-dark" />
                         <span className="font-semibold text-navy">
                           Professional
                         </span>
                       </div>
                     </th>
-                    <th className="text-left py-4 px-4 border-b-2 border-gold">
+                    <th className="text-left py-4 px-4 border-b-2 border-teal">
                       <div className="flex items-center gap-2">
-                        <GraduationCap size={16} className="text-gold-dark" />
+                        <GraduationCap size={16} className="text-teal-dark" />
                         <span className="font-semibold text-navy">
                           Student & Early-Career
                         </span>
@@ -636,10 +636,10 @@ export default function MembershipPage() {
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 bg-navy rounded-xl flex items-center justify-center">
-                <Shield size={22} className="text-gold" />
+                <Shield size={22} className="text-teal" />
               </div>
               <div>
-                <span className="text-[10px] text-gold-dark font-semibold tracking-[0.15em] uppercase">
+                <span className="text-[10px] text-teal-dark font-semibold tracking-[0.15em] uppercase">
                   Curated Branch
                 </span>
                 <h2 className="text-2xl font-bold text-navy">
@@ -671,7 +671,7 @@ export default function MembershipPage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -695,7 +695,7 @@ export default function MembershipPage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -719,11 +719,11 @@ export default function MembershipPage() {
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 bg-gold rounded-xl flex items-center justify-center">
+              <div className="w-11 h-11 bg-teal rounded-xl flex items-center justify-center">
                 <GraduationCap size={22} className="text-navy" />
               </div>
               <div>
-                <span className="text-[10px] text-gold-dark font-semibold tracking-[0.15em] uppercase">
+                <span className="text-[10px] text-teal-dark font-semibold tracking-[0.15em] uppercase">
                   Growth Track
                 </span>
                 <h2 className="text-2xl font-bold text-navy">
@@ -754,7 +754,7 @@ export default function MembershipPage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -778,7 +778,7 @@ export default function MembershipPage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -794,7 +794,7 @@ export default function MembershipPage() {
 
             <button
               onClick={() => setModalType("student")}
-              className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
+              className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20"
             >
               Apply as Student <ArrowRight size={14} />
             </button>
@@ -807,7 +807,7 @@ export default function MembershipPage() {
         <div className="mx-auto max-w-3xl px-6">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Questions
               </p>
               <h2 className="text-3xl font-bold text-navy tracking-tight">

@@ -15,14 +15,14 @@ const postsData: Record<
     content: string[];
   }
 > = {
-  "why-we-built-npi": {
-    title: "Why We Built NEF: A Letter from the Founders",
+  "why-we-built-nefti": {
+    title: "Why We Built NEFTI: A Letter from the Founders",
     date: "February 1, 2026",
     readTime: "5 min read",
     category: "Founders",
     content: [
       "If you work in payments, you\u2019ve probably joined a few industry groups, Slack channels, or LinkedIn communities. And you\u2019ve probably left most of them after a few weeks. The signal-to-noise ratio is terrible. Conversations are dominated by vendor pitches, job postings, and people who don\u2019t actually work in payments day-to-day.",
-      "We built NEF because we wanted something different. We wanted a community where every member has real payments experience. Where conversations are focused, relevant, and worth your time. Where you can ask a question about interchange optimization or chargeback dispute strategies and get an answer from someone who actually deals with those problems.",
+      "We built NEFTI because we wanted something different. We wanted a community where every member has real payments experience. Where conversations are focused, relevant, and worth your time. Where you can ask a question about interchange optimization or chargeback dispute strategies and get an answer from someone who actually deals with those problems.",
       "That\u2019s why membership is application-based. We review every single application. We look for real experience\u20142 or more years working directly in payments. We want product managers, risk analysts, compliance officers, operations specialists, and engineers who touch payments rails every day.",
       "But we also know that the next generation of payments professionals matters. That\u2019s why we created the Student & Early-Career branch. It\u2019s a separate track with its own benefits, designed for people who are building toward a payments career but aren\u2019t there yet. We\u2019re honest about the distinction because we think that honesty serves everyone better.",
       "We\u2019re starting small and intentional. A few intimate events in Atlanta. A growing community of vetted professionals. And a roadmap that includes courses and certifications built by practitioners, not academics who\u2019ve never processed a transaction.",
@@ -54,7 +54,7 @@ const postsData: Record<
       "The roles that are hardest to fill right now: payments product managers, fraud/risk analysts, and compliance specialists with payments-specific knowledge. Engineering roles that touch payment processing, settlement, and reconciliation are also in high demand.",
       "What sets candidates apart: understanding of the payments value chain (authorization, clearing, settlement), familiarity with regulations (PCI DSS, Reg E, BSA/AML), and the ability to speak both business and technical languages. If you\u2019re a student, start learning these concepts now.",
       "Certifications like the ETA CPP (Certified Payments Professional) can help, but they\u2019re not required for entry-level roles. What matters more is demonstrated interest: read industry publications, attend events, and build a network of practitioners who can mentor you.",
-      "That\u2019s exactly what NEF\u2019s Student & Early-Career branch is designed to provide. You\u2019ll get access to practitioners, content, and events that help you build the knowledge and connections you need to land your first payments role.",
+      "That\u2019s exactly what NEFTI\u2019s Student & Early-Career branch is designed to provide. You\u2019ll get access to practitioners, content, and events that help you build the knowledge and connections you need to land your first payments role.",
     ],
   },
   "fraud-trends-q1-2026": {
@@ -84,7 +84,7 @@ export default function BlogPostPage() {
         <h1 className="text-2xl font-bold text-navy mb-4">Post Not Found</h1>
         <Link
           href="/blog"
-          className="text-gold-dark hover:text-navy font-medium inline-flex items-center gap-1"
+          className="text-teal-dark hover:text-navy font-medium inline-flex items-center gap-1"
         >
           <ArrowLeft size={14} /> Back to Blog
         </Link>
@@ -97,18 +97,18 @@ export default function BlogPostPage() {
       {/* Header */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/3 w-[400px] h-[400px] rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute top-0 left-1/3 w-[400px] h-[400px] rounded-full bg-teal/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-3xl px-6">
           <AnimatedSection>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm text-slate-light hover:text-gold-dark transition-colors mb-8"
+              className="inline-flex items-center gap-1.5 text-sm text-slate-light hover:text-teal-dark transition-colors mb-8"
             >
               <ArrowLeft size={14} /> Back to Blog
             </Link>
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-1 text-xs font-medium text-navy bg-gold px-2.5 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1 text-xs font-medium text-navy bg-teal px-2.5 py-1 rounded-full">
                 <Tag size={10} /> {post.category}
               </span>
               <span className="text-xs text-slate-light">
@@ -152,7 +152,7 @@ export default function BlogPostPage() {
                   Want more insights like this?
                 </h3>
                 <p className="text-sm text-slate mb-6">
-                  NEF members get access to in-depth discussions, closed-door
+                  NEFTI members get access to in-depth discussions, closed-door
                   roundtables, and a community of practitioners.
                 </p>
                 <Link

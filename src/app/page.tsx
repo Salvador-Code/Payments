@@ -25,7 +25,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-white min-h-[92vh] flex items-center">
         {/* Refined background: soft gradient wash + grid */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-b from-gold/10 to-transparent blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-to-b from-teal/10 to-transparent blur-3xl" />
           <div className="absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full bg-navy/[0.05] blur-3xl" />
           <div
             className="absolute inset-0 opacity-[0.035]"
@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <AnimatedSection variant="fade">
               <div className="inline-flex items-center gap-2 bg-white border border-ice-dark rounded-full px-4 py-1.5 mb-8 shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
                 <span className="text-slate text-xs font-medium tracking-wide">
                   Application-Based Membership &middot; Now Accepting
                 </span>
@@ -58,7 +58,7 @@ export default function HomePage() {
 
             <AnimatedSection delay={0.2}>
               <p className="text-lg sm:text-xl text-slate leading-relaxed mb-4 max-w-xl">
-                NEF is a curated network for practitioners with real payments
+                NEFTI is a curated network for practitioners with real payments
                 experience&mdash;backed by a dedicated branch for the next
                 generation.
               </p>
@@ -71,7 +71,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4 mb-16">
                 <Link
                   href="/membership#professional"
-                  className="group inline-flex items-center gap-2.5 bg-gold text-navy font-semibold px-7 py-4 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20 hover:shadow-xl hover:shadow-gold/30"
+                  className="group inline-flex items-center gap-2.5 bg-teal text-white font-semibold px-7 py-4 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20 hover:shadow-xl hover:shadow-teal/30"
                 >
                   Apply as Professional
                   <ArrowRight
@@ -102,7 +102,7 @@ export default function HomePage() {
                     key={i}
                     className="flex items-center gap-2 text-slate-light text-sm"
                   >
-                    <item.icon size={14} className="text-gold-dark" />
+                    <item.icon size={14} className="text-teal-dark" />
                     <span>{item.text}</span>
                   </div>
                 ))}
@@ -142,7 +142,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Getting Started
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight">
@@ -177,10 +177,10 @@ export default function HomePage() {
                   <span className="text-5xl font-bold text-navy/[0.04] group-hover:text-white/[0.06] absolute top-6 right-8 transition-colors duration-500">
                     {item.step}
                   </span>
-                  <div className="w-11 h-11 bg-gold/10 group-hover:bg-gold/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-500">
+                  <div className="w-11 h-11 bg-teal/10 group-hover:bg-teal/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-500">
                     <item.icon
                       size={20}
-                      className="text-gold-dark group-hover:text-gold transition-colors duration-500"
+                      className="text-teal-dark group-hover:text-teal transition-colors duration-500"
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-navy group-hover:text-white mb-2 transition-colors duration-500">
@@ -201,7 +201,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Community Structure
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-4">
@@ -220,11 +220,11 @@ export default function HomePage() {
               <div className="bg-white rounded-2xl border border-ice-dark overflow-hidden h-full flex flex-col hover:shadow-lg hover:shadow-navy/5 transition-shadow duration-300">
                 <div className="bg-navy p-7">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gold/20 rounded-lg flex items-center justify-center">
-                      <Shield size={20} className="text-gold" />
+                    <div className="w-10 h-10 bg-teal/20 rounded-lg flex items-center justify-center">
+                      <Shield size={20} className="text-teal" />
                     </div>
                     <div>
-                      <span className="text-[10px] text-gold/70 font-semibold tracking-[0.15em] uppercase">
+                      <span className="text-[10px] text-teal/70 font-semibold tracking-[0.15em] uppercase">
                         Curated
                       </span>
                       <h3 className="text-lg font-bold text-white leading-tight">
@@ -248,7 +248,7 @@ export default function HomePage() {
                       <li key={i} className="flex items-start gap-2.5 text-sm">
                         <CheckCircle
                           size={16}
-                          className="text-gold-dark shrink-0 mt-0.5"
+                          className="text-teal-dark shrink-0 mt-0.5"
                         />
                         <span className="text-navy/70">{item}</span>
                       </li>
@@ -267,7 +267,7 @@ export default function HomePage() {
             {/* Student */}
             <AnimatedSection variant="slide-right">
               <div className="bg-white rounded-2xl border border-ice-dark overflow-hidden h-full flex flex-col hover:shadow-lg hover:shadow-navy/5 transition-shadow duration-300">
-                <div className="bg-gradient-to-r from-gold-dark to-gold p-7">
+                <div className="bg-gradient-to-r from-teal-dark to-teal p-7">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
                       <GraduationCap size={20} className="text-white" />
@@ -297,7 +297,7 @@ export default function HomePage() {
                       <li key={i} className="flex items-start gap-2.5 text-sm">
                         <CheckCircle
                           size={16}
-                          className="text-gold-dark shrink-0 mt-0.5"
+                          className="text-teal-dark shrink-0 mt-0.5"
                         />
                         <span className="text-navy/70">{item}</span>
                       </li>
@@ -321,7 +321,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Upcoming Events
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-4">
@@ -334,7 +334,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/events"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold-dark transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-teal-dark transition-colors"
               >
                 View all events <ArrowUpRight size={14} />
               </Link>
@@ -342,11 +342,11 @@ export default function HomePage() {
 
             <AnimatedSection delay={0.15}>
               <div className="bg-navy rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gold/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute top-0 right-0 w-40 h-40 bg-teal/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-4">
-                    <Calendar size={14} className="text-gold" />
-                    <span className="text-gold text-xs font-semibold tracking-wider uppercase">
+                    <Calendar size={14} className="text-teal" />
+                    <span className="text-teal text-xs font-semibold tracking-wider uppercase">
                       Featured Event
                     </span>
                   </div>
@@ -357,7 +357,7 @@ export default function HomePage() {
                     <span className="text-xs text-white/40 bg-white/5 px-3 py-1 rounded-full">
                       Limited to 75
                     </span>
-                    <span className="text-xs text-gold/80 bg-gold/10 px-3 py-1 rounded-full">
+                    <span className="text-xs text-teal/80 bg-teal/10 px-3 py-1 rounded-full">
                       $75 ticket
                     </span>
                   </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Ideal Members
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight">
@@ -398,7 +398,7 @@ export default function HomePage() {
               <div className="bg-white rounded-2xl border border-ice-dark p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center">
-                    <Briefcase size={18} className="text-gold" />
+                    <Briefcase size={18} className="text-teal" />
                   </div>
                   <h3 className="text-lg font-semibold text-navy">
                     Professionals
@@ -420,7 +420,7 @@ export default function HomePage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0"
+                        className="text-teal-dark shrink-0"
                       />
                       {role}
                     </li>
@@ -439,7 +439,7 @@ export default function HomePage() {
             <AnimatedSection delay={0.1}>
               <div className="bg-white rounded-2xl border border-ice-dark p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-gold rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-teal rounded-xl flex items-center justify-center">
                     <GraduationCap size={18} className="text-navy" />
                   </div>
                   <h3 className="text-lg font-semibold text-navy">
@@ -458,7 +458,7 @@ export default function HomePage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       <span>{item}</span>
                     </li>
@@ -473,14 +473,14 @@ export default function HomePage() {
       {/* ── Veterans Initiative ── */}
       <section className="py-24 bg-ice/40 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-teal/10 rounded-full blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-6">
-                <Medal size={14} className="text-gold-dark" />
-                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 bg-teal/10 border border-teal/20 rounded-full px-4 py-1.5 mb-6">
+                <Medal size={14} className="text-teal-dark" />
+                <span className="text-teal-dark text-xs font-semibold tracking-wider uppercase">
                   Giving Back
                 </span>
               </div>
@@ -499,11 +499,11 @@ export default function HomePage() {
             <AnimatedSection>
               <div className="bg-white border border-ice-dark rounded-2xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                    <Medal size={20} className="text-gold-dark" />
+                  <div className="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center">
+                    <Medal size={20} className="text-teal-dark" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-gold-dark tracking-[0.15em] uppercase font-medium">
+                    <span className="text-[10px] text-teal-dark tracking-[0.15em] uppercase font-medium">
                       Free Program
                     </span>
                     <h3 className="text-lg font-semibold text-navy">
@@ -513,14 +513,14 @@ export default function HomePage() {
                 </div>
                 <p className="text-slate text-sm leading-relaxed mb-5">
                   Quarterly cohorts for U.S. military veterans covering payments
-                  fundamentals. Small groups (15&ndash;20), taught by NEF
+                  fundamentals. Small groups (15&ndash;20), taught by NEFTI
                   Professional volunteers.
                 </p>
                 <ul className="space-y-2.5">
                   {[
                     "Free, structured curriculum: rails, networks, settlement, compliance",
                     "Hands-on case studies and real-world scenarios",
-                    "Certificate recognized by NEF member companies",
+                    "Certificate recognized by NEFTI member companies",
                   ].map((item, i) => (
                     <li
                       key={i}
@@ -528,7 +528,7 @@ export default function HomePage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -540,11 +540,11 @@ export default function HomePage() {
             <AnimatedSection delay={0.1}>
               <div className="bg-white border border-ice-dark rounded-2xl p-8 h-full">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                    <Handshake size={20} className="text-gold-dark" />
+                  <div className="w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center">
+                    <Handshake size={20} className="text-teal-dark" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-gold-dark tracking-[0.15em] uppercase font-medium">
+                    <span className="text-[10px] text-teal-dark tracking-[0.15em] uppercase font-medium">
                       Quarterly
                     </span>
                     <h3 className="text-lg font-semibold text-navy">
@@ -569,7 +569,7 @@ export default function HomePage() {
                     >
                       <CheckCircle
                         size={14}
-                        className="text-gold-dark shrink-0 mt-0.5"
+                        className="text-teal-dark shrink-0 mt-0.5"
                       />
                       {item}
                     </li>
@@ -588,7 +588,7 @@ export default function HomePage() {
                 { stat: "Quarterly", label: "Networking nights" },
               ].map((item, i) => (
                 <div key={i} className="text-center">
-                  <p className="text-2xl font-bold text-gold-dark">{item.stat}</p>
+                  <p className="text-2xl font-bold text-teal-dark">{item.stat}</p>
                   <p className="text-xs text-slate-light mt-0.5">{item.label}</p>
                 </div>
               ))}
@@ -602,7 +602,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Social Proof
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight">
@@ -615,7 +615,7 @@ export default function HomePage() {
             {[
               {
                 quote:
-                  "What makes NEF different is the bar. Everyone in the room actually does the work day-to-day.",
+                  "What makes NEFTI different is the bar. Everyone in the room actually does the work day-to-day.",
                 author: "Senior Payments PM",
                 role: "Top-10 U.S. Bank",
               },
@@ -634,7 +634,7 @@ export default function HomePage() {
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="bg-ice/50 border border-ice-dark rounded-2xl p-8 h-full flex flex-col">
-                  <div className="text-gold text-4xl leading-none mb-4">
+                  <div className="text-teal text-4xl leading-none mb-4">
                     &ldquo;
                   </div>
                   <p className="text-navy/80 text-sm leading-relaxed mb-6 flex-1">
@@ -657,7 +657,7 @@ export default function HomePage() {
       <section className="py-24 bg-ice/50">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
               Join Us
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy tracking-tight mb-4">
@@ -670,7 +670,7 @@ export default function HomePage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/membership#professional"
-                className="group inline-flex items-center gap-2 bg-gold text-navy font-semibold px-8 py-4 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20 text-lg"
+                className="group inline-flex items-center gap-2 bg-teal text-white font-semibold px-8 py-4 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20 text-lg"
               >
                 Apply as Professional
                 <ArrowRight

@@ -43,20 +43,15 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2.5 group">
           <Image
             src="/logo.svg"
-            alt="NEF Logo"
+            alt="NEFTI Logo"
             width={36}
             height={36}
             className="w-9 h-9"
             priority
           />
-          <div className="flex flex-col">
-            <span className="font-bold text-lg tracking-tight leading-none text-navy">
-              NEF
-            </span>
-            <span className="text-[9px] tracking-[0.2em] uppercase leading-none mt-0.5 hidden sm:block text-slate-light">
-              National Excellence of Fintech
-            </span>
-          </div>
+          <span className="font-bold text-xl tracking-tight text-navy">
+            NEFTI
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -86,7 +81,7 @@ export default function Header() {
           </Link>
           <Link
             href="/membership"
-            className="inline-flex items-center gap-2 bg-gold text-navy text-[13px] font-semibold px-5 py-2.5 rounded-lg hover:bg-gold-light transition-all duration-200 shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-2 bg-teal text-white text-[13px] font-semibold px-5 py-2.5 rounded-lg hover:bg-teal-light transition-all duration-200 shadow-sm hover:shadow-md"
           >
             Apply Now
             <ArrowRight size={14} />
@@ -121,12 +116,12 @@ export default function Header() {
               >
                 <Image
                   src="/logo.svg"
-                  alt="NEF Logo"
+                  alt="NEFTI Logo"
                   width={36}
                   height={36}
                   className="w-9 h-9"
                 />
-                <span className="text-navy font-bold text-lg">NEF</span>
+                <span className="text-navy font-bold text-lg">NEFTI</span>
               </Link>
               <button
                 onClick={() => setMobileOpen(false)}
@@ -162,7 +157,7 @@ export default function Header() {
               <Link
                 href="/membership"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-2 w-full bg-gold text-navy font-semibold px-6 py-3.5 rounded-xl hover:bg-gold-light transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-teal text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-teal-light transition-colors"
               >
                 Apply for Membership
                 <ArrowRight size={16} />

@@ -50,7 +50,7 @@ const events = [
     priority: "Student members",
     studentSeats: null,
     description:
-      "A hands-on workshop covering the payments value chain, key players, and career paths. Led by NEF Professional members who work at top-10 banks and fintechs.",
+      "A hands-on workshop covering the payments value chain, key players, and career paths. Led by NEFTI Professional members who work at top-10 banks and fintechs.",
     featured: false,
   },
   {
@@ -63,7 +63,7 @@ const events = [
     priority: "Veterans + Professional members",
     studentSeats: null,
     description:
-      "An intimate dinner pairing veterans from our Payments Cohort program with NEF Professional members. Build real relationships with people who can open doors in payments.",
+      "An intimate dinner pairing veterans from our Payments Cohort program with NEFTI Professional members. Build real relationships with people who can open doors in payments.",
     featured: false,
   },
   {
@@ -87,11 +87,11 @@ export default function EventsPage() {
       {/* Hero */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full bg-teal/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-4">
               Calendar
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
@@ -118,12 +118,12 @@ export default function EventsPage() {
                 <div
                   className={`rounded-2xl overflow-hidden transition-all hover:shadow-lg ${
                     event.featured
-                      ? "border-2 border-gold/30 shadow-md hover:shadow-xl"
+                      ? "border-2 border-teal/30 shadow-md hover:shadow-xl"
                       : "border border-ice-dark hover:border-ice-dark/50"
                   }`}
                 >
                   {event.featured && (
-                    <div className="bg-gradient-to-r from-gold to-gold-light px-6 py-2.5 flex items-center gap-2">
+                    <div className="bg-gradient-to-r from-teal to-teal-light px-6 py-2.5 flex items-center gap-2">
                       <Sparkles size={12} className="text-navy" />
                       <span className="text-xs font-semibold text-navy uppercase tracking-wider">
                         Featured Event
@@ -134,7 +134,7 @@ export default function EventsPage() {
                     <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                       {/* Date badge */}
                       <div className="shrink-0 w-[72px] h-[72px] bg-navy rounded-xl flex flex-col items-center justify-center">
-                        <span className="text-[10px] font-medium text-gold/70 uppercase tracking-wider">
+                        <span className="text-[10px] font-medium text-teal/70 uppercase tracking-wider">
                           {event.date.split(" ")[0]}
                         </span>
                         <span className="text-2xl font-bold text-white leading-none">
@@ -161,7 +161,7 @@ export default function EventsPage() {
                           <span className="inline-flex items-center gap-1.5 text-xs text-slate bg-ice px-3 py-1.5 rounded-lg">
                             <Users size={11} /> {event.capacity}
                           </span>
-                          <span className="inline-flex items-center gap-1.5 text-xs text-gold-dark bg-gold/10 px-3 py-1.5 rounded-lg font-medium">
+                          <span className="inline-flex items-center gap-1.5 text-xs text-teal-dark bg-teal/10 px-3 py-1.5 rounded-lg font-medium">
                             <DollarSign size={11} /> {event.price}
                           </span>
                         </div>
@@ -171,7 +171,7 @@ export default function EventsPage() {
                             <Shield size={11} /> {event.priority}
                           </span>
                           {event.studentSeats && (
-                            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gold-dark bg-gold/10 px-3 py-1.5 rounded-lg">
+                            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-teal-dark bg-teal/10 px-3 py-1.5 rounded-lg">
                               <GraduationCap size={11} /> {event.studentSeats}
                             </span>
                           )}
@@ -197,7 +197,7 @@ export default function EventsPage() {
       <section className="py-20 bg-ice/50">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
               Priority Access
             </p>
             <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
@@ -210,7 +210,7 @@ export default function EventsPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/membership#professional"
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
+                className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20"
               >
                 Apply as Professional <ArrowRight size={16} />
               </Link>

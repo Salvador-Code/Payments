@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,8 +27,15 @@ const inter = localFont({
   ],
 });
 
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-sora",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "NEF - National Excellence of Fintech",
+  title: "NEFTI - Payments Professional Network",
   description:
     "A curated, application-based institute for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.",
   keywords: [
@@ -35,8 +43,7 @@ export const metadata: Metadata = {
     "fintech",
     "professional network",
     "payments professionals",
-    "NEF",
-    "national excellence of fintech",
+    "NEFTI",
     "membership",
   ],
 };
@@ -48,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${sora.variable} antialiased`}>
         <Header />
         <main className="pt-20">{children}</main>
         <Footer />

@@ -2,21 +2,22 @@
 
 @theme inline {
   --color-background: #ffffff;
-  --color-foreground: #0f1729;
-  --color-navy: #0f1729;
-  --color-navy-light: #1a2744;
-  --color-navy-lighter: #253660;
-  --color-gold: #c9a84c;
-  --color-gold-light: #dfc06a;
-  --color-gold-dark: #a88a2e;
+  --color-foreground: #0a1431;
+  --color-navy: #0a1431;
+  --color-navy-light: #111b3d;
+  --color-navy-lighter: #1b2a52;
+  --color-teal: #11c5b3;
+  --color-teal-light: #7de6d8;
+  --color-teal-dark: #0e8c7f;
   --color-slate: #64748b;
   --color-slate-light: #94a3b8;
-  --color-ice: #f0f4f8;
-  --color-ice-dark: #e2e8f0;
+  --color-ice: #f2f4f7;
+  --color-ice-dark: #e3e6ea;
   --color-white: #ffffff;
   --color-success: #10b981;
   --color-error: #ef4444;
   --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-sora);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -30,6 +31,15 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
 }
 
 /* ── Refined scrollbar ── */
@@ -49,8 +59,8 @@ body {
 
 /* ── Selection ── */
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-navy);
+  background: var(--color-teal);
+  color: var(--color-white);
 }
 
 /* ── Modal overlay ── */
@@ -69,7 +79,7 @@ body {
   z-index: 1;
 }
 
-/* ── Divider line with gold accent ── */
+/* ── Divider line with teal accent ── */
 .section-divider {
   position: relative;
 }
@@ -81,7 +91,7 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: var(--color-gold);
+  background: var(--color-teal);
   border-radius: 99px;
 }
 
@@ -94,7 +104,7 @@ textarea:focus {
 
 /* ── Gradient text utility ── */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  background: linear-gradient(135deg, var(--color-teal), var(--color-teal-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

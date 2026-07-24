@@ -6,8 +6,8 @@ import { Calendar, ArrowRight, Clock, Tag } from "lucide-react";
 
 const posts = [
   {
-    slug: "why-we-built-npi",
-    title: "Why We Built NEF: A Letter from the Founders",
+    slug: "why-we-built-nefti",
+    title: "Why We Built NEFTI: A Letter from the Founders",
     excerpt:
       "The payments industry has plenty of conferences and LinkedIn groups. What it doesn\u2019t have is a curated community where practitioners can have real conversations. Here\u2019s why we\u2019re building one.",
     date: "February 1, 2026",
@@ -52,11 +52,11 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full bg-teal/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-4">
               Insights
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight mb-6">
@@ -76,10 +76,10 @@ export default function BlogPage() {
           <AnimatedSection>
             <Link href={`/blog/${featured.slug}`} className="block group">
               <article className="bg-navy rounded-2xl p-8 sm:p-10 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-60 h-60 bg-gold/5 rounded-full -translate-y-1/3 translate-x-1/3" />
+                <div className="absolute top-0 right-0 w-60 h-60 bg-teal/5 rounded-full -translate-y-1/3 translate-x-1/3" />
                 <div className="relative">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="inline-flex items-center gap-1 text-xs font-medium text-navy bg-gold px-2.5 py-1 rounded-full">
+                    <span className="inline-flex items-center gap-1 text-xs font-medium text-navy bg-teal px-2.5 py-1 rounded-full">
                       <Tag size={10} /> {featured.category}
                     </span>
                     <span className="text-xs text-white/30">
@@ -89,13 +89,13 @@ export default function BlogPage() {
                       {featured.readTime}
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-gold transition-colors mb-3">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-teal transition-colors mb-3">
                     {featured.title}
                   </h2>
                   <p className="text-white/40 leading-relaxed mb-6 max-w-2xl">
                     {featured.excerpt}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gold group-hover:gap-2.5 transition-all">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-teal group-hover:gap-2.5 transition-all">
                     Read article <ArrowRight size={14} />
                   </span>
                 </div>
@@ -112,9 +112,9 @@ export default function BlogPage() {
             {rest.map((post, i) => (
               <AnimatedSection key={post.slug} delay={i * 0.08}>
                 <Link href={`/blog/${post.slug}`} className="block group">
-                  <article className="bg-white border border-ice-dark rounded-2xl p-6 sm:p-8 hover:shadow-md hover:border-gold/20 transition-all">
+                  <article className="bg-white border border-ice-dark rounded-2xl p-6 sm:p-8 hover:shadow-md hover:border-teal/20 transition-all">
                     <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span className="inline-flex items-center gap-1 text-xs font-medium text-gold-dark bg-gold/10 px-2.5 py-1 rounded-full">
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-teal-dark bg-teal/10 px-2.5 py-1 rounded-full">
                         <Tag size={10} /> {post.category}
                       </span>
                       <span className="inline-flex items-center gap-1 text-xs text-slate">
@@ -124,13 +124,13 @@ export default function BlogPage() {
                         <Clock size={10} /> {post.readTime}
                       </span>
                     </div>
-                    <h2 className="text-lg font-bold text-navy group-hover:text-gold-dark transition-colors mb-2">
+                    <h2 className="text-lg font-bold text-navy group-hover:text-teal-dark transition-colors mb-2">
                       {post.title}
                     </h2>
                     <p className="text-sm text-slate leading-relaxed mb-4">
                       {post.excerpt}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-gold-dark group-hover:gap-2 transition-all">
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-teal-dark group-hover:gap-2 transition-all">
                       Read more <ArrowRight size={13} />
                     </span>
                   </article>

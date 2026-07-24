@@ -28,7 +28,7 @@ const nationalRankings = [
     highlights: [
       "Industry-leading curriculum",
       "Strong employer partnerships",
-      "NEF academic partner",
+      "NEFTI academic partner",
     ],
     featured: true,
   },
@@ -259,14 +259,14 @@ export default function RankingsPage() {
       {/* Hero */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-teal/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-6">
-                <Trophy size={14} className="text-gold-dark" />
-                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 bg-teal/10 border border-teal/20 rounded-full px-4 py-1.5 mb-6">
+                <Trophy size={14} className="text-teal-dark" />
+                <span className="text-teal-dark text-xs font-semibold tracking-wider uppercase">
                   2026 Rankings
                 </span>
               </div>
@@ -311,8 +311,8 @@ export default function RankingsPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-11 h-11 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <item.icon size={20} className="text-gold-dark" />
+                  <div className="w-11 h-11 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <item.icon size={20} className="text-teal-dark" />
                   </div>
                   <h4 className="text-sm font-semibold text-navy mb-1">
                     {item.label}
@@ -330,7 +330,7 @@ export default function RankingsPage() {
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-2">
-              <Flag size={22} className="text-gold-dark" />
+              <Flag size={22} className="text-teal-dark" />
               <h2 className="text-3xl font-bold text-navy tracking-tight">
                 National Rankings
               </h2>
@@ -346,7 +346,7 @@ export default function RankingsPage() {
                 <div
                   className={`rounded-xl p-5 sm:p-6 transition-all ${
                     school.featured
-                      ? "bg-navy text-white shadow-xl ring-1 ring-gold/20"
+                      ? "bg-navy text-white shadow-xl ring-1 ring-teal/20"
                       : "bg-white border border-ice-dark hover:shadow-md"
                   }`}
                 >
@@ -354,7 +354,7 @@ export default function RankingsPage() {
                     <div
                       className={`shrink-0 w-11 h-11 rounded-xl flex items-center justify-center font-bold text-base ${
                         school.featured
-                          ? "bg-gold text-navy"
+                          ? "bg-teal text-navy"
                           : "bg-ice text-navy"
                       }`}
                     >
@@ -371,8 +371,8 @@ export default function RankingsPage() {
                           {school.name}
                         </h3>
                         {school.featured && (
-                          <span className="text-[10px] font-semibold bg-gold/20 text-gold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                            NEF Partner
+                          <span className="text-[10px] font-semibold bg-teal/20 text-teal px-2 py-0.5 rounded-full uppercase tracking-wider">
+                            NEFTI Partner
                           </span>
                         )}
                       </div>
@@ -416,7 +416,7 @@ export default function RankingsPage() {
                     <div className="shrink-0 text-right">
                       <div
                         className={`text-2xl font-bold ${
-                          school.featured ? "text-gold" : "text-navy"
+                          school.featured ? "text-teal" : "text-navy"
                         }`}
                       >
                         {school.score}
@@ -447,12 +447,12 @@ export default function RankingsPage() {
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="bg-navy rounded-2xl p-8 sm:p-12 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full -translate-y-1/3 translate-x-1/3" />
+              <div className="absolute top-0 right-0 w-80 h-80 bg-teal/5 rounded-full -translate-y-1/3 translate-x-1/3" />
               <div className="relative grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
-                    <Award size={14} className="text-gold" />
-                    <span className="text-gold text-xs font-semibold tracking-wider uppercase">
+                  <div className="inline-flex items-center gap-2 bg-teal/10 border border-teal/20 rounded-full px-4 py-1.5 mb-4">
+                    <Award size={14} className="text-teal" />
+                    <span className="text-teal text-xs font-semibold tracking-wider uppercase">
                       #1 Ranked Program
                     </span>
                   </div>
@@ -472,7 +472,7 @@ export default function RankingsPage() {
                       { value: "#1", label: "National & Global" },
                     ].map((stat, i) => (
                       <div key={i}>
-                        <div className="text-2xl font-bold text-gold">
+                        <div className="text-2xl font-bold text-teal">
                           {stat.value}
                         </div>
                         <div className="text-xs text-white/30 mt-0.5">
@@ -489,8 +489,8 @@ export default function RankingsPage() {
                       desc: "Courses designed with input from Visa, FIS, Global Payments, and other Atlanta-based payments leaders.",
                     },
                     {
-                      title: "NEF Academic Partner",
-                      desc: "Official academic partner of NEF, giving students direct access to industry professionals.",
+                      title: "NEFTI Academic Partner",
+                      desc: "Official academic partner of NEFTI, giving students direct access to industry professionals.",
                     },
                     {
                       title: "Payments Corridor Advantage",
@@ -501,7 +501,7 @@ export default function RankingsPage() {
                       key={i}
                       className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-4"
                     >
-                      <h4 className="text-sm font-semibold text-gold mb-1">
+                      <h4 className="text-sm font-semibold text-teal mb-1">
                         {item.title}
                       </h4>
                       <p className="text-xs text-white/40">{item.desc}</p>
@@ -519,7 +519,7 @@ export default function RankingsPage() {
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-2">
-              <Globe size={22} className="text-gold-dark" />
+              <Globe size={22} className="text-teal-dark" />
               <h2 className="text-3xl font-bold text-navy tracking-tight">
                 Global Rankings
               </h2>
@@ -542,12 +542,12 @@ export default function RankingsPage() {
                 <div
                   key={school.rank}
                   className={`grid grid-cols-[60px_1fr_1fr_80px_60px] sm:grid-cols-[70px_1fr_1fr_100px_70px] gap-2 px-5 py-4 items-center border-b border-ice last:border-b-0 transition-colors hover:bg-ice/30 ${
-                    school.featured ? "bg-gold/[0.03]" : ""
+                    school.featured ? "bg-teal/[0.03]" : ""
                   }`}
                 >
                   <span
                     className={`font-bold text-sm ${
-                      school.featured ? "text-gold-dark" : "text-navy"
+                      school.featured ? "text-teal-dark" : "text-navy"
                     }`}
                   >
                     #{school.rank}
@@ -557,7 +557,7 @@ export default function RankingsPage() {
                     {school.featured && (
                       <Trophy
                         size={11}
-                        className="text-gold-dark shrink-0"
+                        className="text-teal-dark shrink-0"
                       />
                     )}
                   </span>
@@ -566,7 +566,7 @@ export default function RankingsPage() {
                   </span>
                   <span
                     className={`text-sm font-bold text-right ${
-                      school.featured ? "text-gold-dark" : "text-navy"
+                      school.featured ? "text-teal-dark" : "text-navy"
                     }`}
                   >
                     {school.score}
@@ -585,7 +585,7 @@ export default function RankingsPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+            <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
               Join the Network
             </p>
             <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
@@ -593,13 +593,13 @@ export default function RankingsPage() {
             </h2>
             <p className="text-slate mb-8 max-w-xl mx-auto">
               Whether you&apos;re a student at a top-ranked program or an
-              industry professional, NEF connects you with the payments
+              industry professional, NEFTI connects you with the payments
               community that matters.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/membership#professional"
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
+                className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20"
               >
                 Apply as Professional <ArrowRight size={16} />
               </Link>

@@ -23,19 +23,19 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative bg-white pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-teal/10 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-4">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-4">
                 Our Story
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy tracking-tight leading-[1.1] mb-6">
-                About NEF
+                About NEFTI
               </h1>
               <p className="text-lg text-slate leading-relaxed max-w-xl">
-                National Excellence of Fintech was founded with a simple
+                NEFTI was founded with a simple
                 belief: the payments industry needs a community where experience
                 is valued, conversations are real, and membership means
                 something.
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Our Mission
               </p>
               <h2 className="text-3xl font-bold text-navy tracking-tight mb-6">
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 are vendor pitches disguised as thought leadership.
               </p>
               <p className="text-slate leading-relaxed">
-                NEF is different by design. We review every application. We cap
+                NEFTI is different by design. We review every application. We cap
                 our events. We separate Professional and Student tracks so that
                 everyone gets value at their level. And we&apos;re rooted in the
                 real work of payments&mdash;not the buzzwords.
@@ -98,7 +98,7 @@ export default function AboutPage() {
                     key={i}
                     className="bg-ice/70 border border-ice-dark rounded-xl p-5 hover:bg-ice transition-colors"
                   >
-                    <item.icon size={20} className="text-gold-dark mb-3" />
+                    <item.icon size={20} className="text-teal-dark mb-3" />
                     <h4 className="text-sm font-semibold text-navy mb-1">
                       {item.label}
                     </h4>
@@ -116,7 +116,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Quality First
               </p>
               <h2 className="text-3xl font-bold text-navy tracking-tight">
@@ -150,8 +150,8 @@ export default function AboutPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="text-center">
-                    <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <item.icon size={22} className="text-gold-dark" />
+                    <div className="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                      <item.icon size={22} className="text-teal-dark" />
                     </div>
                     <h4 className="text-sm font-semibold text-navy mb-1">
                       {item.title}
@@ -172,14 +172,14 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection>
             <div className="text-center mb-14">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Leadership
               </p>
               <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
                 Meet the founders
               </h2>
               <p className="text-slate max-w-2xl mx-auto">
-                NEF was founded by practitioners who saw the gap between existing
+                NEFTI was founded by practitioners who saw the gap between existing
                 industry groups and what payments professionals actually need.
               </p>
             </div>
@@ -189,14 +189,14 @@ export default function AboutPage() {
             <AnimatedSection>
               <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-gold font-bold text-xl">
+                  <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-teal font-bold text-xl">
                     SS
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-navy">
                       Salvador Santos
                     </h3>
-                    <p className="text-sm text-gold-dark font-medium">
+                    <p className="text-sm text-teal-dark font-medium">
                       Co-Founder
                     </p>
                   </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
                   ].map((tag, i) => (
                     <span
                       key={i}
-                      className="text-[11px] bg-gold/10 text-gold-dark px-2.5 py-1 rounded-full font-medium"
+                      className="text-[11px] bg-teal/10 text-teal-dark px-2.5 py-1 rounded-full font-medium"
                     >
                       {tag}
                     </span>
@@ -232,20 +232,20 @@ export default function AboutPage() {
             <AnimatedSection delay={0.1}>
               <div className="bg-ice/30 hover:bg-ice/60 border border-transparent hover:border-ice-dark rounded-2xl p-8 h-full transition-all duration-300 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-gold font-bold text-xl">
+                  <div className="w-14 h-14 bg-navy rounded-xl flex items-center justify-center text-teal font-bold text-xl">
                     BW
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-navy">
                       Benjamin Willhite-Mettler
                     </h3>
-                    <p className="text-sm text-gold-dark font-medium">
+                    <p className="text-sm text-teal-dark font-medium">
                       Co-Founder
                     </p>
                   </div>
                 </div>
                 <p className="text-slate text-sm leading-relaxed">
-                  Co-founded NEF alongside Salvador to build the community
+                  Co-founded NEFTI alongside Salvador to build the community
                   payments professionals actually deserve&mdash;selective,
                   substantive, and rooted in real practitioner experience.
                 </p>
@@ -274,7 +274,7 @@ export default function AboutPage() {
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
                 <div className="bg-ice/30 border border-ice-dark rounded-xl p-5 text-center">
-                  <item.icon size={20} className="text-gold-dark mx-auto mb-2" />
+                  <item.icon size={20} className="text-teal-dark mx-auto mb-2" />
                   <h4 className="text-sm font-semibold text-navy mb-1">
                     {item.title}
                   </h4>
@@ -289,14 +289,14 @@ export default function AboutPage() {
       {/* Veterans Initiative */}
       <section id="veterans" className="py-24 bg-ice/40 scroll-mt-24 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal/10 rounded-full blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="text-center mb-14">
-              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
-                <Medal size={14} className="text-gold-dark" />
-                <span className="text-gold-dark text-xs font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 bg-teal/10 border border-teal/20 rounded-full px-4 py-1.5 mb-4">
+                <Medal size={14} className="text-teal-dark" />
+                <span className="text-teal-dark text-xs font-semibold tracking-wider uppercase">
                   Giving Back
                 </span>
               </div>
@@ -315,8 +315,8 @@ export default function AboutPage() {
             <AnimatedSection>
               <div className="bg-white border border-ice-dark rounded-xl p-7">
                 <div className="flex items-start gap-5">
-                  <div className="shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                    <Medal size={20} className="text-gold-dark" />
+                  <div className="shrink-0 w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center">
+                    <Medal size={20} className="text-teal-dark" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-navy mb-2">
@@ -336,8 +336,8 @@ export default function AboutPage() {
             <AnimatedSection delay={0.1}>
               <div className="bg-white border border-ice-dark rounded-xl p-7">
                 <div className="flex items-start gap-5">
-                  <div className="shrink-0 w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                    <Handshake size={20} className="text-gold-dark" />
+                  <div className="shrink-0 w-10 h-10 bg-teal/10 rounded-lg flex items-center justify-center">
+                    <Handshake size={20} className="text-teal-dark" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-navy mb-2">
@@ -362,14 +362,14 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection>
             <div className="text-center mb-14">
-              <p className="text-xs font-semibold text-gold-dark tracking-[0.2em] uppercase mb-3">
+              <p className="text-xs font-semibold text-teal-dark tracking-[0.2em] uppercase mb-3">
                 Roadmap
               </p>
               <h2 className="text-3xl font-bold text-navy tracking-tight mb-4">
                 What&apos;s coming next
               </h2>
               <p className="text-slate max-w-xl mx-auto">
-                We&apos;re building NEF in phases. Here&apos;s what&apos;s on
+                We&apos;re building NEFTI in phases. Here&apos;s what&apos;s on
                 the roadmap.
               </p>
             </div>
@@ -418,7 +418,7 @@ export default function AboutPage() {
                 >
                   <span
                     className={`text-[10px] font-semibold tracking-[0.15em] uppercase ${
-                      item.active ? "text-gold/70" : "text-gold-dark"
+                      item.active ? "text-teal/70" : "text-teal-dark"
                     }`}
                   >
                     {item.phase}
@@ -440,7 +440,7 @@ export default function AboutPage() {
                       >
                         <span
                           className={
-                            item.active ? "text-gold/60" : "text-gold-dark"
+                            item.active ? "text-teal/60" : "text-teal-dark"
                           }
                         >
                           &bull;
@@ -470,7 +470,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/membership#professional"
-                className="inline-flex items-center gap-2 bg-gold text-navy font-semibold px-7 py-3.5 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20"
+                className="inline-flex items-center gap-2 bg-teal text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-teal-light transition-all shadow-lg shadow-teal/20"
               >
                 Apply as Professional <ArrowRight size={16} />
               </Link>
