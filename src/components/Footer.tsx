@@ -37,15 +37,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
+            <div className="flex items-center mb-4">
               <Image
-                src="/logo.svg"
-                alt="NEFTI Logo"
-                width={36}
-                height={36}
-                className="w-9 h-9"
+                src="/logo-white.svg"
+                alt="NEFTI"
+                width={190}
+                height={32}
+                className="h-7 w-auto"
               />
-              <span className="font-bold text-lg text-white">NEFTI</span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
               A curated community for serious payments practitioners and

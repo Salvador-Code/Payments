@@ -40,18 +40,15 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center group">
           <Image
             src="/logo.svg"
-            alt="NEFTI Logo"
-            width={36}
-            height={36}
-            className="w-9 h-9"
+            alt="NEFTI"
+            width={190}
+            height={32}
+            className="h-7 w-auto"
             priority
           />
-          <span className="font-bold text-xl tracking-tight text-navy">
-            NEFTI
-          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -112,16 +109,15 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2.5"
+                className="flex items-center"
               >
                 <Image
                   src="/logo.svg"
-                  alt="NEFTI Logo"
-                  width={36}
-                  height={36}
-                  className="w-9 h-9"
+                  alt="NEFTI"
+                  width={190}
+                  height={32}
+                  className="h-7 w-auto"
                 />
-                <span className="text-navy font-bold text-lg">NEFTI</span>
               </Link>
               <button
                 onClick={() => setMobileOpen(false)}
