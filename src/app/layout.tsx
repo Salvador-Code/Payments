@@ -34,10 +34,14 @@ const sora = Sora({
   display: "swap",
 });
 
+const title = "NEFTI - Payments Professional Network";
+const description =
+  "A curated, application-based institute for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.";
+
 export const metadata: Metadata = {
-  title: "NEFTI - Payments Professional Network",
-  description:
-    "A curated, application-based institute for serious payments professionals. Join the selective community backed by Visa product leadership and KSU FinTech.",
+  metadataBase: new URL("https://nefti.org"),
+  title,
+  description,
   keywords: [
     "payments",
     "fintech",
@@ -46,6 +50,19 @@ export const metadata: Metadata = {
     "NEFTI",
     "membership",
   ],
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "NEFTI",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
